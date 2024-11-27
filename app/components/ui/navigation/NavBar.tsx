@@ -72,25 +72,25 @@ export default function NavBar() {
 
         {/* Mobile Menu Overlay */}
         {isMenuOpen && (
-          <div className="fixed inset-0 top-16 bg-gray-100 dark:bg-gray-900 z-50">
+          <div className="fixed inset-x-0 top-16 bg-gray-100 dark:bg-gray-900 z-50">
             <div className="flex flex-col p-4 space-y-4">
               <Link href="/properties" onClick={() => setIsMenuOpen(false)}>
-                <div className="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
+                <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
                   Properties
                 </div>
               </Link>
               <Link href="/services" onClick={() => setIsMenuOpen(false)}>
-                <div className="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
+                <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
                   Services
                 </div>
               </Link>
               <Link href="/about" onClick={() => setIsMenuOpen(false)}>
-                <div className="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
+                <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
                   About
                 </div>
               </Link>
               <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                <div className="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
+                <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
                   Contact
                 </div>
               </Link>
