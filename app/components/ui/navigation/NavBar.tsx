@@ -63,6 +63,7 @@ export default function NavBar() {
               variant="outline"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="transition-transform hover:scale-105"
             >
               <Menu className="h-[1.2rem] w-[1.2rem]" />
             </Button>
@@ -71,32 +72,36 @@ export default function NavBar() {
         </div>
 
         {/* Mobile Menu Overlay */}
-        {isMenuOpen && (
-          <div className="fixed inset-x-0 top-16 bg-gray-100 dark:bg-gray-900 z-50">
-            <div className="flex flex-col p-4 space-y-4">
-              <Link href="/properties" onClick={() => setIsMenuOpen(false)}>
-                <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
-                  Properties
-                </div>
-              </Link>
-              <Link href="/services" onClick={() => setIsMenuOpen(false)}>
-                <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
-                  Services
-                </div>
-              </Link>
-              <Link href="/about" onClick={() => setIsMenuOpen(false)}>
-                <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
-                  About
-                </div>
-              </Link>
-              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
-                  Contact
-                </div>
-              </Link>
-            </div>
+        <div
+          className={`fixed inset-x-0 top-16 bg-gray-100 dark:bg-gray-900 z-50 transition-all duration-300 ${
+            isMenuOpen
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-2 pointer-events-none"
+          }`}
+        >
+          <div className="flex flex-col p-4 space-y-4">
+            <Link href="/properties" onClick={() => setIsMenuOpen(false)}>
+              <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
+                Properties
+              </div>
+            </Link>
+            <Link href="/services" onClick={() => setIsMenuOpen(false)}>
+              <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
+                Services
+              </div>
+            </Link>
+            <Link href="/about" onClick={() => setIsMenuOpen(false)}>
+              <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
+                About
+              </div>
+            </Link>
+            <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+              <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
+                Contact
+              </div>
+            </Link>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
