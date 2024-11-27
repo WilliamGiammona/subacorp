@@ -9,7 +9,7 @@ import { ModeToggle } from "./mode-toggle";
 
 export default function NavBar() {
   return (
-    <nav className="border-b">
+    <nav className="bg-gray-100 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="text-xl font-bold">Suba Properties</div>
