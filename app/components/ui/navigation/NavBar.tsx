@@ -18,28 +18,28 @@ export default function NavBar() {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link href="/properties" legacyBehavior passHref>
-                    <NavigationMenuLink className="px-4 hover:opacity-70 transition-opacity">
+                    <NavigationMenuLink className="px-4 relative after:absolute after:bottom-[-8px] after:left-[1rem] after:h-0.5 after:bg-current after:w-0 hover:after:w-[calc(100%-2rem)] after:transition-all">
                       Properties
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/services" legacyBehavior passHref>
-                    <NavigationMenuLink className="px-4 hover:opacity-70 transition-opacity">
+                    <NavigationMenuLink className="px-4 relative after:absolute after:bottom-[-8px] after:left-[1rem] after:h-0.5 after:bg-current after:w-0 hover:after:w-[calc(100%-2rem)] after:transition-all">
                       Services
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/about" legacyBehavior passHref>
-                    <NavigationMenuLink className="px-4 hover:opacity-70 transition-opacity">
+                    <NavigationMenuLink className="px-4 relative after:absolute after:bottom-[-8px] after:left-[1rem] after:h-0.5 after:bg-current after:w-0 hover:after:w-[calc(100%-2rem)] after:transition-all">
                       About
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/contact" legacyBehavior passHref>
-                    <NavigationMenuLink className="px-4 hover:opacity-70 transition-opacity">
+                    <NavigationMenuLink className="px-4 relative after:absolute after:bottom-[-8px] after:left-[1rem] after:h-0.5 after:bg-current after:w-0 hover:after:w-[calc(100%-2rem)] after:transition-all">
                       Contact
                     </NavigationMenuLink>
                   </Link>
