@@ -5,7 +5,7 @@ import {
   NavigationMenuList,
 } from "@/app/components/ui/navigation-menu";
 import Link from "next/link";
-import { ModeToggle } from "./mode-toggle";
+import { ModeToggle } from "../mode-toggle";
 
 export default function NavBar() {
   return (
