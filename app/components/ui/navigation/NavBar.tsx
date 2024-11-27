@@ -18,28 +18,28 @@ export default function NavBar() {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link href="/properties" legacyBehavior passHref>
-                    <NavigationMenuLink className="px-4">
+                    <NavigationMenuLink className="px-4 hover:opacity-70 transition-opacity">
                       Properties
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/services" legacyBehavior passHref>
-                    <NavigationMenuLink className="px-4">
+                    <NavigationMenuLink className="px-4 hover:opacity-70 transition-opacity">
                       Services
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/about" legacyBehavior passHref>
-                    <NavigationMenuLink className="px-4">
+                    <NavigationMenuLink className="px-4 hover:opacity-70 transition-opacity">
                       About
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/contact" legacyBehavior passHref>
-                    <NavigationMenuLink className="px-4">
+                    <NavigationMenuLink className="px-4 hover:opacity-70 transition-opacity">
                       Contact
                     </NavigationMenuLink>
                   </Link>
