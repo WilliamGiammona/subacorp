@@ -1,14 +1,11 @@
-import React from "react";
-import NavBar from "../components/ui/navigation/NavBar";
+import NavBar from "@/app/components/ui/navigation/NavBar";
 
-const properties = () => {
-  return;
-  <>
-    <div>
-      hi
-      <NavBar />
-    </div>
-  </>;
-};
-
-export default properties;
+export default function Properties() {
+  return (
+    <>
+      <div>
+        <NavBar />
+      </div>
+    </>
+  );
+}
