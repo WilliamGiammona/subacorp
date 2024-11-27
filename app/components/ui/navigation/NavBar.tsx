@@ -65,7 +65,11 @@ export default function NavBar() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="transition-transform hover:scale-105"
             >
-              <Menu className="h-[1.2rem] w-[1.2rem]" />
+              <Menu
+                className={`h-[1.2rem] w-[1.2rem] transition-transform duration-200 ${
+                  isMenuOpen ? "rotate-90" : ""
+                }`}
+              />
             </Button>
             <ModeToggle />
           </div>
