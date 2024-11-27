@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav-link-hover {
+    @apply relative after:absolute after:bottom-[-8px] after:left-[1rem] after:h-0.5 after:bg-current after:w-0 hover:after:w-[calc(100%-2rem)] after:transition-all;
+  }
+}
