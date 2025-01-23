@@ -1,11 +1,13 @@
-import { Button } from "./components/ui/button";
+"use client";
+
+import { Button } from "@/app/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./components/ui/card";
+} from "@/app/components/ui/card";
 import { Building2, MapPin, Grid2x2 } from "lucide-react";
 import Link from "next/link";
 
@@ -47,26 +49,26 @@ const featuredProperties: Property[] = [
 
 export default function FeaturedProperties() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
+    <section className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Featured Properties</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
+            Featured Properties
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
             Discover our selection of premium commercial properties in prime
             locations
           </p>
         </div>
 
-        {/* Properties Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {featuredProperties.map((property) => (
             <Card
               key={property.id}
               className="hover:shadow-lg transition-shadow"
             >
               <div
-                className="h-48 w-full rounded-t-lg"
+                className="h-36 sm:h-48 w-full rounded-t-lg"
                 style={{
                   backgroundImage: `url("/images/Interior.jpg")`,
                   backgroundSize: "cover",
@@ -74,20 +76,22 @@ export default function FeaturedProperties() {
                 }}
               />
               <CardHeader>
-                <CardTitle>{property.title}</CardTitle>
+                <CardTitle className="text-lg sm:text-xl">
+                  {property.title}
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <div className="flex items-center text-muted-foreground">
-                    <MapPin className="h-4 w-4 mr-2" />
+                  <div className="flex items-center text-muted-foreground text-sm sm:text-base">
+                    <MapPin className="h-4 w-4 mr-2 flex-shrink-0" />
                     {property.location}
                   </div>
-                  <div className="flex items-center text-muted-foreground">
-                    <Building2 className="h-4 w-4 mr-2" />
+                  <div className="flex items-center text-muted-foreground text-sm sm:text-base">
+                    <Building2 className="h-4 w-4 mr-2 flex-shrink-0" />
                     {property.type}
                   </div>
-                  <div className="flex items-center text-muted-foreground">
-                    <Grid2x2 className="h-4 w-4 mr-2" />
+                  <div className="flex items-center text-muted-foreground text-sm sm:text-base">
+                    <Grid2x2 className="h-4 w-4 mr-2 flex-shrink-0" />
                     {property.size}
                   </div>
                 </div>
@@ -99,21 +103,31 @@ export default function FeaturedProperties() {
           ))}
         </div>
 
-        {/* View All Button */}
-        <div className="text-center mt-12 text-xl">
+        <div className="text-center mt-8 sm:mt-12 flex flex-col sm:flex-row justify-center gap-4">
           <Link href="/solana-beach">
-            <Button className="mr-2 py-8" variant="outline" size="lg">
-              View All Properties
-              <br />
-              in Solana Beach
+            <Button
+              className="w-full sm:w-auto py-4 sm:py-8"
+              variant="outline"
+              size="lg"
+            >
+              <span className="text-sm sm:text-base">
+                View All Properties
+                <br />
+                in Solana Beach
+              </span>
             </Button>
           </Link>
-
           <Link href="/mission-bay">
-            <Button className="py-8 ml-2" variant="outline" size="lg">
-              View All Properties
-              <br />
-              in Mission Bay
+            <Button
+              className="w-full sm:w-auto py-4 sm:py-8"
+              variant="outline"
+              size="lg"
+            >
+              <span className="text-sm sm:text-base">
+                View All Properties
+                <br />
+                in Mission Bay
+              </span>
             </Button>
           </Link>
         </div>
