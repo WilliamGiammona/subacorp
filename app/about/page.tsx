@@ -40,7 +40,7 @@ export default function About() {
                 <ul className="mt-2 space-y-2">
                   <li className="flex items-center gap-2">
                     <MapPin className="w-4 h-4" />
-                    Mercado Del Sol - Encinitas
+                    Mercado Del Sol - Solana Beach
                   </li>
                   <li className="flex items-center gap-2">
                     <MapPin className="w-4 h-4" />
