@@ -1,6 +1,6 @@
 import NavBar from "@/app/components/ui/navigation/NavBar";
 
-export default function Properties() {
+export default function MissionBay() {
   return (
     <>
       <div>
