@@ -1,13 +1,14 @@
-// NavBar.tsx
 "use client";
 
-import { Menu } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   return (
     <nav className="bg-white dark:bg-gray-800 shadow-sm">
@@ -17,13 +18,12 @@ export default function NavBar() {
             SUBA Properties
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4">
             <Link href="/locations" className="hover:text-gray-600">
               Locations
             </Link>
             <Link href="/services" className="hover:text-gray-600">
-              Legal
+              Services
             </Link>
             <Link href="/about" className="hover:text-gray-600">
               About
@@ -31,9 +31,19 @@ export default function NavBar() {
             <Link href="/contact" className="hover:text-gray-600">
               Contact
             </Link>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
@@ -44,7 +54,6 @@ export default function NavBar() {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-2">
             <Link
@@ -57,7 +66,7 @@ export default function NavBar() {
               href="/services"
               className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
             >
-              Legal
+              Services
             </Link>
             <Link
               href="/about"
@@ -71,6 +80,18 @@ export default function NavBar() {
             >
               Contact
             </Link>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="ml-4"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
           </div>
         )}
       </div>
