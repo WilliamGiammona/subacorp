@@ -90,7 +90,7 @@ export default function Encinitas() {
           {listings.map((listing) => (
             <Card
               key={listing.id}
-              className="hover:shadow-lg transition-shadow duration-300"
+              className="hover:shadow-lg transition-shadow duration-300 cursor-pointer"
             >
               <div className="relative h-48 w-full">
                 <Image
@@ -123,7 +123,7 @@ export default function Encinitas() {
           {tenants.map((tenant) => (
             <Card
               key={tenant.id}
-              className="hover:shadow-lg transition-shadow duration-300"
+              className="hover:shadow-lg transition-shadow duration-300 cursor-pointer"
             >
               <div className="relative h-48 w-full">
                 <Image
