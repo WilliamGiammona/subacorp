@@ -86,13 +86,13 @@ export default function NavBar() {
               {isDropdownOpen && (
                 <div className="pl-8 space-y-2">
                   <Link
-                    href="/locations/encinitas"
+                    href="/encinitas"
                     className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
                   >
                     Mercado Del Sol
                   </Link>
                   <Link
-                    href="/locations/mission-bay"
+                    href="/mission-bay"
                     className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
                   >
                     Mission Bay Center
