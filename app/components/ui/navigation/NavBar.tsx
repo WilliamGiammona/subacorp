@@ -29,7 +29,7 @@ export default function NavBar() {
                 <NavigationMenuItem>
                   <Link href="/properties" legacyBehavior passHref>
                     <NavigationMenuLink className="px-4 nav-link-hover">
-                      Properties
+                      Locations
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -88,7 +88,7 @@ export default function NavBar() {
           <div className="flex flex-col p-4 space-y-4">
             <Link href="/properties" onClick={() => setIsMenuOpen(false)}>
               <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
-                Properties
+                Locations
               </div>
             </Link>
             <Link href="/services" onClick={() => setIsMenuOpen(false)}>
