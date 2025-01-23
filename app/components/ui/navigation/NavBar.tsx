@@ -33,13 +33,13 @@ export default function NavBar() {
                     href="/solana-beach"
                     className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
-                    Mercado Del Sol
+                    Solana Beach
                   </Link>
                   <Link
                     href="/mission-bay"
                     className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
-                    Mission Bay Center
+                    Mission Bay
                   </Link>
                 </div>
               </div>
