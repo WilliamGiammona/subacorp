@@ -44,15 +44,17 @@ export default function NavBar() {
                 </div>
               </div>
             </div>
-            <Link href="/services" className="hover:text-gray-600">
-              Legal
-            </Link>
+
             <Link href="/about" className="hover:text-gray-600">
               About
             </Link>
             <Link href="/contact" className="hover:text-gray-600">
               Contact
             </Link>
+            <Link href="/services" className="hover:text-gray-600">
+              Legal
+            </Link>
+
             <Button
               variant="ghost"
               size="icon"
@@ -103,12 +105,7 @@ export default function NavBar() {
                 </div>
               )}
             </div>
-            <Link
-              href="/services"
-              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
-            >
-              Legal
-            </Link>
+
             <Link
               href="/about"
               className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
@@ -121,6 +118,13 @@ export default function NavBar() {
             >
               Contact
             </Link>
+            <Link
+              href="/services"
+              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
+            >
+              Legal
+            </Link>
+
             <Button
               variant="ghost"
               size="icon"
