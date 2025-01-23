@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "./components/ui/card";
 import { Building2, MapPin, Grid2x2 } from "lucide-react";
+import Link from "next/link";
 
 interface Property {
   id: number;
@@ -67,7 +68,7 @@ export default function FeaturedProperties() {
               <div
                 className="h-48 w-full rounded-t-lg"
                 style={{
-                  backgroundImage: `url(${property.image})`,
+                  backgroundImage: `url("/images/Interior.jpg")`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -99,10 +100,22 @@ export default function FeaturedProperties() {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
-            View All Properties
-          </Button>
+        <div className="text-center mt-12 text-xl">
+          <Link href="/encinitas">
+            <Button className="mr-2 py-8" variant="outline" size="lg">
+              View All Properties
+              <br />
+              in Encinitas
+            </Button>
+          </Link>
+
+          <Link href="/mission-bay">
+            <Button className="py-8 ml-2" variant="outline" size="lg">
+              View All Properties
+              <br />
+              in Mission Bay
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
