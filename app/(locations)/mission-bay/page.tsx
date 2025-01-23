@@ -197,7 +197,7 @@ export default function MissionBay() {
       <div className="bg-white dark:bg-gray-800 shadow-sm py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-            Mission Bay Location
+            Mission Bay Center Location
           </h1>
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-300">
             4501 Mission Bay Dr., San Diego, CA 92109
