@@ -8,8 +8,16 @@ import {
   CardTitle,
 } from "../../components/ui/card";
 import Image from "next/image";
-import { useState } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { X, Download } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "../../components/ui/carousel";
 
 export default function Encinitas() {
   const [selectedListingIndex, setSelectedListingIndex] = useState<
@@ -18,6 +26,46 @@ export default function Encinitas() {
   const [selectedTenantIndex, setSelectedTenantIndex] = useState<number | null>(
     null
   );
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+
+    if (selectedListingIndex !== null) {
+      api.scrollTo(selectedListingIndex);
+    } else if (selectedTenantIndex !== null) {
+      api.scrollTo(selectedTenantIndex);
+    }
+  }, [api, selectedListingIndex, selectedTenantIndex]);
+
+  const handleDownload = async () => {
+    const currentItem =
+      selectedListingIndex !== null
+        ? listings[current - 1]
+        : tenants[current - 1];
+
+    const fileName =
+      "listing" +
+      ("title" in currentItem ? currentItem.title : currentItem.name);
+
+    const a = document.createElement("a");
+    a.href = currentItem.imageUrl;
+    a.download = `${fileName}.jpg`;
+    a.click();
+  };
 
   const listings = [
     {
@@ -77,28 +125,6 @@ export default function Encinitas() {
     },
   ];
 
-  const nextImage = (type: "listing" | "tenant") => {
-    if (type === "listing" && selectedListingIndex !== null) {
-      setSelectedListingIndex((selectedListingIndex + 1) % listings.length);
-    } else if (type === "tenant" && selectedTenantIndex !== null) {
-      setSelectedTenantIndex((selectedTenantIndex + 1) % tenants.length);
-    }
-  };
-
-  const prevImage = (type: "listing" | "tenant") => {
-    if (type === "listing" && selectedListingIndex !== null) {
-      setSelectedListingIndex(
-        selectedListingIndex === 0
-          ? listings.length - 1
-          : selectedListingIndex - 1
-      );
-    } else if (type === "tenant" && selectedTenantIndex !== null) {
-      setSelectedTenantIndex(
-        selectedTenantIndex === 0 ? tenants.length - 1 : selectedTenantIndex - 1
-      );
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <NavBar />
@@ -107,51 +133,58 @@ export default function Encinitas() {
       {(selectedListingIndex !== null || selectedTenantIndex !== null) && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="relative max-w-4xl w-full h-[80vh]">
-            <button
-              onClick={() => {
-                setSelectedListingIndex(null);
-                setSelectedTenantIndex(null);
-              }}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300"
-            >
-              <X size={24} />
-            </button>
+            <div className="absolute top-0 right-0 z-[60] flex items-center gap-4 text-white">
+              <span>
+                {current} / {count}
+              </span>
+              <button
+                onClick={() => {
+                  setSelectedListingIndex(null);
+                  setSelectedTenantIndex(null);
+                }}
+                className="hover:text-gray-300"
+              >
+                <X size={24} />
+              </button>
+            </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                prevImage(selectedListingIndex !== null ? "listing" : "tenant");
-              }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white z-[60]"
+            <Carousel
+              className="w-full h-full"
+              setApi={setApi}
+              opts={{ loop: true }}
             >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                nextImage(selectedListingIndex !== null ? "listing" : "tenant");
-              }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white z-[60]"
-            >
-              <ChevronRight size={24} />
-            </button>
+              <CarouselContent>
+                {(selectedListingIndex !== null ? listings : tenants).map(
+                  (item) => (
+                    <CarouselItem key={item.id} className="h-[80vh]">
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={item.imageUrl}
+                          alt="Property view"
+                          fill
+                          className="rounded-lg object-contain"
+                        />
+                      </div>
+                    </CarouselItem>
+                  )
+                )}
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
 
-            <Image
-              src={
-                selectedListingIndex !== null
-                  ? listings[selectedListingIndex].imageUrl
-                  : tenants[selectedTenantIndex!].imageUrl
-              }
-              alt="Enlarged view"
-              fill
-              className="rounded-lg object-contain"
-            />
+            <div className="absolute bottom-0 right-0">
+              <button
+                className="text-white hover:text-gray-300"
+                onClick={handleDownload}
+              >
+                <Download size={24} />
+              </button>
+            </div>
           </div>
         </div>
       )}
 
-      {/* Address Section */}
       <div className="bg-white dark:bg-gray-800 shadow-sm py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
@@ -163,7 +196,6 @@ export default function Encinitas() {
         </div>
       </div>
 
-      {/* Available Listings */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
           Available Listings
@@ -197,7 +229,6 @@ export default function Encinitas() {
         </div>
       </div>
 
-      {/* Current Tenants */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
           Current Tenants
