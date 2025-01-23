@@ -105,7 +105,7 @@ export default function FeaturedProperties() {
             <Button className="mr-2 py-8" variant="outline" size="lg">
               View All Properties
               <br />
-              in Encinitas
+              in Solana Beach
             </Button>
           </Link>
 
