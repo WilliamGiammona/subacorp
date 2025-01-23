@@ -32,14 +32,6 @@ export default function NavBar() {
                 </Link>
               </div>
             </div>
-
-            <Link
-              href="/services"
-              className="hover:opacity-50 transition-opacity text-lg"
-            >
-              Services
-            </Link>
-
             <Link
               href="/about"
               className="hover:opacity-50 transition-opacity text-lg"
@@ -52,6 +44,12 @@ export default function NavBar() {
               className="hover:opacity-50 transition-opacity text-lg"
             >
               Contact
+            </Link>
+            <Link
+              href="/services"
+              className="hover:opacity-50 transition-opacity text-lg"
+            >
+              Legal
             </Link>
 
             <ModeToggle />
