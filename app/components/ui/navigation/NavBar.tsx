@@ -23,7 +23,7 @@ export default function NavBar() {
               Locations
             </Link>
             <Link href="/services" className="hover:text-gray-600">
-              Services
+              Legal
             </Link>
             <Link href="/about" className="hover:text-gray-600">
               About
@@ -57,7 +57,7 @@ export default function NavBar() {
               href="/services"
               className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
             >
-              Services
+              Legal
             </Link>
             <Link
               href="/about"
