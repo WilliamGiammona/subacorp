@@ -1,40 +1,58 @@
 import { Button } from "./components/ui/button";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className="relative h-[70vh] w-full">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-black"
-        style={{
-          backgroundImage: 'url("/api/placeholder/1920/1080")',
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          opacity: 0.7,
-        }}
-      />
+    <div className="relative min-h-screen">
+      <div className="relative h-[85vh]">
+        {/* Background Image with Blue Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url("/images/SolanaBeachPic.jpg")',
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(0.8) contrast(1.2)",
+          }}
+        >
+          {/* Dark Blue Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-black/50" />
+        </div>
 
-      {/* Content */}
-      <div className="relative h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-          Premium Commercial Real Estate Solutions
-        </h1>
-        <p className="text-xl sm:text-2xl text-gray-200 mb-8 max-w-2xl">
-          Discover exceptional properties and investment opportunities across
-          prime locations
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Button size="lg" className="bg-white text-black hover:bg-gray-100">
-            View Properties
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="text-white border-white hover:bg-white hover:text-black"
-          >
-            Contact Us
-          </Button>
+        {/* Content */}
+        <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col justify-center items-center h-full pt-20">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white max-w-6xl leading-tight text-center">
+              Commercial Real Estate in {""}
+              <br />
+              <span className="text-blue-400">San Diego</span>
+            </h1>
+            <p className="mt-6 text-xl md:text-2xl text-gray-200 max-w-2xl text-center">
+              Creating Value in Middle Market Commercial Real Estate
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4 justify-center">
+              <Link href="/encinitas">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-white text-white hover:bg-white/10 px-8"
+                >
+                  Encinitas
+                </Button>
+              </Link>
+              <Link href="/mission-bay">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-white text-white hover:bg-white/10 px-8"
+                >
+                  Mission Bay
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
