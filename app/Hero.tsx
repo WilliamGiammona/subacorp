@@ -33,7 +33,7 @@ export default function HeroSection() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4 justify-center">
-              <Link href="/encinitas">
+              <Link href="/solana-beach">
                 <Button
                   variant="outline"
                   size="lg"

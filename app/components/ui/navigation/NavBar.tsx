@@ -30,7 +30,7 @@ export default function NavBar() {
               <div className="hidden group-hover:block absolute left-0 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
                 <div className="py-1">
                   <Link
-                    href="/encinitas"
+                    href="/solana-beach"
                     className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     Mercado Del Sol
@@ -91,7 +91,7 @@ export default function NavBar() {
               {isDropdownOpen && (
                 <div className="pl-8 space-y-2">
                   <Link
-                    href="/encinitas"
+                    href="/solana-beach"
                     className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
                   >
                     Mercado Del Sol

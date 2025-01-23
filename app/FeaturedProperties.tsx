@@ -101,7 +101,7 @@ export default function FeaturedProperties() {
 
         {/* View All Button */}
         <div className="text-center mt-12 text-xl">
-          <Link href="/encinitas">
+          <Link href="/solana-beach">
             <Button className="mr-2 py-8" variant="outline" size="lg">
               View All Properties
               <br />
