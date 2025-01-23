@@ -106,10 +106,10 @@ export default function MissionBay() {
       <div className="bg-white dark:bg-gray-800 shadow-sm py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-            Encinitas Location
+            Mission Bay Location
           </h1>
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-300">
-            731 Hwy 101, Solana Beach, CA 92075, USA
+            4529 Mission Bay Dr., San Diego, CA 92109
           </p>
         </div>
       </div>
