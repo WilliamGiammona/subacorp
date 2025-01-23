@@ -200,7 +200,7 @@ export default function MissionBay() {
             Mission Bay Location
           </h1>
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-300">
-            4529 Mission Bay Dr., San Diego, CA 92109
+            4501 Mission Bay Dr., San Diego, CA 92109
           </p>
         </div>
       </div>
