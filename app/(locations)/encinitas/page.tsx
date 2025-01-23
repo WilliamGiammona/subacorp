@@ -14,28 +14,28 @@ export default function Encinitas() {
       title: "Suite 101",
       sqft: "1,200",
       price: "$2,800/month",
-      imageUrl: "/api/placeholder/400/300",
+      imageUrl: "/images/Interior.jpg",
     },
     {
       id: 2,
       title: "Suite 102",
       sqft: "950",
       price: "$2,200/month",
-      imageUrl: "/api/placeholder/400/300",
+      imageUrl: "/images/Interior.jpg",
     },
     {
       id: 3,
       title: "Suite 201",
       sqft: "1,500",
       price: "$3,500/month",
-      imageUrl: "/api/placeholder/400/300",
+      imageUrl: "/images/Interior.jpg",
     },
     {
       id: 4,
       title: "Suite 202",
       sqft: "800",
       price: "$1,900/month",
-      imageUrl: "/api/placeholder/400/300",
+      imageUrl: "/images/Interior.jpg",
     },
   ];
 
@@ -44,28 +44,27 @@ export default function Encinitas() {
       id: 1,
       name: "Body Quest Fitness",
       since: "2015",
-      imageUrl: "/api/placeholder/400/300",
+      imageUrl: "/images/Interior.jpg",
     },
     {
       id: 2,
       name: "Ocean View Cleaners",
       since: "2018",
-      imageUrl: "/api/placeholder/400/300",
+      imageUrl: "/images/Interior.jpg",
     },
     {
       id: 3,
       name: "Pacific Coffee Co.",
       since: "2019",
-      imageUrl: "/api/placeholder/400/300",
+      imageUrl: "/images/Interior.jpg",
     },
     {
       id: 4,
       name: "Coastal Insurance Group",
       since: "2020",
-      imageUrl: "/api/placeholder/400/300",
+      imageUrl: "/images/Interior.jpg",
     },
   ];
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <NavBar />
