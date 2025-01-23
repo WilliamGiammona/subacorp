@@ -20,12 +20,12 @@ export default function NavBar() {
                 Locations
               </button>
               <div className="absolute hidden group-hover:block top-full left-0  bg-white dark:bg-gray-800 rounded shadow-lg py-2 w-40 z-50">
-                <Link href="/locations/encinitas">
+                <Link href="/encinitas">
                   <div className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-lg">
                     Encinitas
                   </div>
                 </Link>
-                <Link href="/locations/mission-bay">
+                <Link href="/mission-bay">
                   <div className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-lg">
                     Mission Bay
                   </div>
