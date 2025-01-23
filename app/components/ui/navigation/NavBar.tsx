@@ -1,60 +1,78 @@
+// NavBar.tsx
 "use client";
-import { ModeToggle } from "../mode-toggle";
+
+import { Menu } from "lucide-react";
+import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function NavBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <nav className="bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between h-16 items-center">
-          <Link
-            href="/"
-            className="text-xl font-bold hover:opacity-50 transition-opacity"
-          >
-            SUBA CORPORATION
+    <nav className="bg-white dark:bg-gray-800 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="font-bold text-xl">
+            SUBA Properties
           </Link>
 
-          <div className="flex items-center gap-8">
-            <div className="group relative">
-              <button className="hover:cursor-pointer text-lg">
-                Locations
-              </button>
-              <div className="absolute hidden group-hover:block top-full left-0  bg-white dark:bg-gray-800 rounded shadow-lg py-2 w-40 z-50">
-                <Link href="/encinitas">
-                  <div className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-lg">
-                    Encinitas
-                  </div>
-                </Link>
-                <Link href="/mission-bay">
-                  <div className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-lg">
-                    Mission Bay
-                  </div>
-                </Link>
-              </div>
-            </div>
-            <Link
-              href="/about"
-              className="hover:opacity-50 transition-opacity text-lg"
-            >
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Link href="/locations" className="hover:text-gray-600">
+              Locations
+            </Link>
+            <Link href="/services" className="hover:text-gray-600">
+              Services
+            </Link>
+            <Link href="/about" className="hover:text-gray-600">
               About
             </Link>
-
-            <Link
-              href="/contact"
-              className="hover:opacity-50 transition-opacity text-lg"
-            >
+            <Link href="/contact" className="hover:text-gray-600">
               Contact
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <Menu className="h-6 w-6" />
+          </Button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden py-4 space-y-2">
+            <Link
+              href="/locations"
+              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
+            >
+              Locations
             </Link>
             <Link
               href="/services"
-              className="hover:opacity-50 transition-opacity text-lg"
+              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
             >
-              Legal
+              Services
             </Link>
-
-            <ModeToggle />
+            <Link
+              href="/about"
+              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
+            >
+              Contact
+            </Link>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );
