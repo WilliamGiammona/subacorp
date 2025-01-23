@@ -22,10 +22,10 @@ export default function About() {
               <div>
                 <h2 className="text-2xl font-bold mb-2">Our Legacy</h2>
                 <p className="text-muted-foreground">
-                  For 40 years, we've been a cornerstone of San Diego's
-                  commercial real estate landscape, providing premium retail and
-                  office spaces that foster business growth and community
-                  development.
+                  For 40 years, we&apos;ve been a cornerstone of San
+                  Diego&apos;s commercial real estate landscape, providing
+                  premium retail and office spaces that foster business growth
+                  and community development.
                 </p>
               </div>
             </div>
@@ -54,16 +54,16 @@ export default function About() {
           <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm">
             <h2 className="text-2xl font-bold mb-4">Our Commitment</h2>
             <p className="text-muted-foreground mb-6">
-              We're dedicated to providing exceptional commercial spaces that
-              serve both our tenants and the local community. Our properties are
-              strategically located in San Diego's most vibrant areas, offering
-              businesses prime locations to thrive.
+              We&apos;re dedicated to providing exceptional commercial spaces
+              that serve both our tenants and the local community. Our
+              properties are strategically located in San Diego&apos;s most
+              vibrant areas, offering businesses prime locations to thrive.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
                 <h3 className="font-bold mb-2">Location Excellence</h3>
                 <p className="text-sm text-muted-foreground">
-                  Prime locations in San Diego's most sought-after areas
+                  Prime locations in San Diego&apos;s most sought-after areas
                 </p>
               </div>
               <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">

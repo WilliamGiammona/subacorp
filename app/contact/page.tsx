@@ -15,7 +15,7 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="text-lg text-muted-foreground">
-            We'd love to hear from you. Get in touch with us!
+            We&apos;d love to hear from you. Get in touch with us!
           </p>
         </div>
 
