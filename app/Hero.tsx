@@ -39,7 +39,7 @@ export default function HeroSection() {
                   size="lg"
                   className="border-2 border-white text-white hover:bg-white/10 px-8"
                 >
-                  Encinitas
+                  Solana Beach
                 </Button>
               </Link>
               <Link href="/mission-bay">

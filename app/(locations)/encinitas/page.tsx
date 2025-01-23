@@ -76,7 +76,7 @@ export default function Encinitas() {
       price: "$2,800/month",
       imageUrl: "/images/Interior.jpg",
       type: "Office Space",
-      location: "Encinitas",
+      location: "Solana Beach",
     },
     {
       id: 2,
@@ -85,7 +85,7 @@ export default function Encinitas() {
       price: "$2,200/month",
       imageUrl: "/images/Interior.jpg",
       type: "Office Space",
-      location: "Encinitas",
+      location: "Solana Beach",
     },
     {
       id: 3,
@@ -94,7 +94,7 @@ export default function Encinitas() {
       price: "$3,500/month",
       imageUrl: "/images/Interior.jpg",
       type: "Office Space",
-      location: "Encinitas",
+      location: "Solana Beach",
     },
     {
       id: 4,
@@ -103,7 +103,7 @@ export default function Encinitas() {
       price: "$1,900/month",
       imageUrl: "/images/Interior.jpg",
       type: "Office Space",
-      location: "Encinitas",
+      location: "Solana Beach",
     },
   ];
 
@@ -197,7 +197,7 @@ export default function Encinitas() {
       <div className="bg-white dark:bg-gray-800 shadow-sm py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-            Encinitas Location
+            Solana Beach Location
           </h1>
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-300">
             731 Hwy 101, Solana Beach, CA 92075
