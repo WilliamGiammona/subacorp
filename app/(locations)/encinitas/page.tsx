@@ -1,3 +1,5 @@
+"use client";
+
 import NavBar from "@/app/components/ui/navigation/NavBar";
 import {
   Card,
@@ -6,8 +8,12 @@ import {
   CardTitle,
 } from "../../components/ui/card";
 import Image from "next/image";
+import { useState } from "react";
+import { X } from "lucide-react";
 
 export default function Encinitas() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const listings = [
     {
       id: 1,
@@ -65,9 +71,36 @@ export default function Encinitas() {
       imageUrl: "/images/Interior.jpg",
     },
   ];
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <NavBar />
+
+      {/* Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="relative max-w-4xl w-full h-[80vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-10 right-0 text-white hover:text-gray-300"
+            >
+              <X size={24} />
+            </button>
+            <Image
+              src={selectedImage}
+              alt="Enlarged view"
+              fill
+              className="rounded-lg object-contain"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Address Section */}
       <div className="bg-white dark:bg-gray-800 shadow-sm py-8">
@@ -91,6 +124,7 @@ export default function Encinitas() {
             <Card
               key={listing.id}
               className="hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+              onClick={() => setSelectedImage(listing.imageUrl)}
             >
               <div className="relative h-48 w-full">
                 <Image
@@ -124,6 +158,7 @@ export default function Encinitas() {
             <Card
               key={tenant.id}
               className="hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+              onClick={() => setSelectedImage(tenant.imageUrl)}
             >
               <div className="relative h-48 w-full">
                 <Image
