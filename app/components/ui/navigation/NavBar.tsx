@@ -15,8 +15,11 @@ export default function NavBar() {
     <nav className="bg-white dark:bg-gray-800 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="font-bold text-xl">
-            SUBA Properties
+          <Link
+            href="/"
+            className="font-bold text-xl hover:bg-gray-100 dark:hover:bg-gray-700"
+          >
+            SUBA Corporation
           </Link>
 
           <div className="hidden md:flex items-center space-x-4">
