@@ -191,7 +191,7 @@ export default function Encinitas() {
             Encinitas Location
           </h1>
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-300">
-            731 Hwy 101, Solana Beach, CA 92075, USA
+            731 Hwy 101, Solana Beach, CA 92075
           </p>
         </div>
       </div>
