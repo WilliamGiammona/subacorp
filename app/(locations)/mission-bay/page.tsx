@@ -140,7 +140,7 @@ export default function MissionBay() {
 
       {/* Modal */}
       {(selectedListingIndex !== null || selectedTenantIndex !== null) && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur">
           <div className="relative max-w-4xl w-full h-[80vh]">
             <div className="absolute top-0 right-0 z-[60] flex items-center gap-4 text-white">
               <span>
