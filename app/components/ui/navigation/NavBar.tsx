@@ -1,13 +1,19 @@
 "use client";
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../dropdown-menu";
+import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "@/app/components/ui/navigation-menu";
+} from "../navigation-menu";
 import Link from "next/link";
 import { ModeToggle } from "../mode-toggle";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../button";
 
@@ -27,11 +33,26 @@ export default function NavBar() {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link href="/properties" legacyBehavior passHref>
-                    <NavigationMenuLink className="px-4 nav-link-hover">
-                      Properties
-                    </NavigationMenuLink>
-                  </Link>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <NavigationMenuLink className="px-4 nav-link-hover inline-flex items-center cursor-pointer">
+                        Locations{" "}
+                        <ChevronDown className="ml-1 h-4 w-4 translate-y-[2px]" />
+                      </NavigationMenuLink>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuItem>
+                        <Link href="/locations/encinitas" className="w-full">
+                          Encinitas
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <Link href="/locations/mission-bay" className="w-full">
+                          Mission Bay
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/services" legacyBehavior passHref>
@@ -86,9 +107,20 @@ export default function NavBar() {
           }`}
         >
           <div className="flex flex-col p-4 space-y-4">
-            <Link href="/properties" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              href="/locations/encinitas"
+              onClick={() => setIsMenuOpen(false)}
+            >
               <div className="px-4 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
-                Properties
+                Locations
+              </div>
+            </Link>
+            <Link
+              href="/locations/mission-bay"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <div className="px-8 py-2 text-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md">
+                Mission Bay
               </div>
             </Link>
             <Link href="/services" onClick={() => setIsMenuOpen(false)}>
