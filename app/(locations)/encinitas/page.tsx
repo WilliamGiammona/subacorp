@@ -4,12 +4,13 @@ import NavBar from "@/app/components/ui/navigation/NavBar";
 import {
   Card,
   CardContent,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { X, Download } from "lucide-react";
+import { X, Download, MapPin, Building2, Grid2x2 } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -74,6 +75,8 @@ export default function Encinitas() {
       sqft: "1,200",
       price: "$2,800/month",
       imageUrl: "/images/Interior.jpg",
+      type: "Office Space",
+      location: "Encinitas",
     },
     {
       id: 2,
@@ -81,6 +84,8 @@ export default function Encinitas() {
       sqft: "950",
       price: "$2,200/month",
       imageUrl: "/images/Interior.jpg",
+      type: "Office Space",
+      location: "Encinitas",
     },
     {
       id: 3,
@@ -88,6 +93,8 @@ export default function Encinitas() {
       sqft: "1,500",
       price: "$3,500/month",
       imageUrl: "/images/Interior.jpg",
+      type: "Office Space",
+      location: "Encinitas",
     },
     {
       id: 4,
@@ -95,6 +102,8 @@ export default function Encinitas() {
       sqft: "800",
       price: "$1,900/month",
       imageUrl: "/images/Interior.jpg",
+      type: "Office Space",
+      location: "Encinitas",
     },
   ];
 
@@ -173,7 +182,7 @@ export default function Encinitas() {
               <CarouselNext className="right-4" />
             </Carousel>
 
-            <div className="absolute bottom-0 right-0">
+            <div className="absolute bottom-4 right-4">
               <button
                 className="text-white hover:text-gray-300"
                 onClick={handleDownload}
@@ -204,26 +213,41 @@ export default function Encinitas() {
           {listings.map((listing, index) => (
             <Card
               key={listing.id}
-              className="hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+              className="hover:shadow-lg transition-shadow cursor-pointer"
               onClick={() => setSelectedListingIndex(index)}
             >
-              <div className="relative h-48 w-full">
-                <Image
-                  src={listing.imageUrl}
-                  alt={listing.title}
-                  fill
-                  className="object-cover rounded-t-lg"
-                />
-              </div>
+              <div
+                className="h-48 w-full rounded-t-lg"
+                style={{
+                  backgroundImage: `url(${listing.imageUrl})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
               <CardHeader>
-                <CardTitle className="text-lg">{listing.title}</CardTitle>
+                <CardTitle>{listing.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {listing.sqft} sq ft
-                </p>
-                <p className="font-semibold mt-1">{listing.price}</p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-muted-foreground">
+                    <MapPin className="h-4 w-4 mr-2" />
+                    {listing.location}
+                  </div>
+                  <div className="flex items-center text-muted-foreground">
+                    <Building2 className="h-4 w-4 mr-2" />
+                    {listing.type}
+                  </div>
+                  <div className="flex items-center text-muted-foreground">
+                    <Grid2x2 className="h-4 w-4 mr-2" />
+                    {listing.sqft} sq ft
+                  </div>
+                </div>
               </CardContent>
+              <CardFooter>
+                <p className="w-full text-center font-semibold">
+                  {listing.price}
+                </p>
+              </CardFooter>
             </Card>
           ))}
         </div>
@@ -237,7 +261,7 @@ export default function Encinitas() {
           {tenants.map((tenant, index) => (
             <Card
               key={tenant.id}
-              className="hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+              className="hover:shadow-lg transition-shadow cursor-pointer"
               onClick={() => setSelectedTenantIndex(index)}
             >
               <div className="relative h-48 w-full">
