@@ -9,19 +9,21 @@ export default function About() {
       <NavBar />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
+        <div className="text-center mb-8 md:mb-12">
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white">
             About Us
           </h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className=" bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm">
+          <div className=" bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm max-w-2xl mx-auto">
             <div className="flex">
-              <History className="w-6 h-6 text-primary mt-1" />
-              <h2 className="text-2xl font-bold mb-4 mx-2">Our Legacy</h2>
+              <History className="w-5 h-5 md:w-6 md:h-6 text-primary mt-1" />
+              <h2 className="text-lg md:text-2xl font-bold mb-4 mx-2">
+                Our Legacy
+              </h2>
             </div>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
               For 40 years, we&apos;ve been a cornerstone of San Diego&apos;s
               commercial real estate landscape, providing premium retail and
               office spaces that foster business growth and community
@@ -29,10 +31,12 @@ export default function About() {
             </p>
 
             <div className="flex mt-8">
-              <Building2 className="w-6 h-6 text-primary mt-1" />
-              <h2 className="text-2xl font-bold mb-4 mx-2">Our Properties</h2>
+              <Building2 className="w-5 h-5 md:w-6 md:h-6 text-primary mt-1" />
+              <h2 className="text-lg md:text-2xl font-bold mb-4 mx-2">
+                Our Properties
+              </h2>
             </div>
-            <h2 className="text-muted-foreground text-lg mb-4">
+            <h2 className="text-muted-foreground md:text-lg mb-4">
               We manage two premier commercial centers in San Diego County:
             </h2>
             <ul className="mt-2 space-y-2">
@@ -47,9 +51,11 @@ export default function About() {
             </ul>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm">
-            <h2 className="text-2xl font-bold mb-4">Our Commitment</h2>
-            <p className="text-muted-foreground mb-6">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm max-w-2xl mx-auto">
+            <h2 className="text-lg md:text-2xl font-bold mb-4">
+              Our Commitment
+            </h2>
+            <p className="text-sm md:text-base leading-relaxed text-muted-foreground mb-6">
               We&apos;re dedicated to providing exceptional commercial spaces
               that serve both our tenants and the local community. Our
               properties are strategically located in San Diego&apos;s most
