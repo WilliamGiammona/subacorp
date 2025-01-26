@@ -16,39 +16,35 @@ export default function About() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
+          <div className=" bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm">
+            <div className="flex">
               <History className="w-6 h-6 text-primary mt-1" />
-              <div>
-                <h2 className="text-2xl font-bold mb-2">Our Legacy</h2>
-                <p className="text-muted-foreground">
-                  For 40 years, we&apos;ve been a cornerstone of San
-                  Diego&apos;s commercial real estate landscape, providing
-                  premium retail and office spaces that foster business growth
-                  and community development.
-                </p>
-              </div>
+              <h2 className="text-2xl font-bold mb-4 mx-2">Our Legacy</h2>
             </div>
+            <p className="text-muted-foreground">
+              For 40 years, we&apos;ve been a cornerstone of San Diego&apos;s
+              commercial real estate landscape, providing premium retail and
+              office spaces that foster business growth and community
+              development.
+            </p>
 
-            <div className="flex items-start gap-4">
+            <div className="flex mt-8">
               <Building2 className="w-6 h-6 text-primary mt-1" />
-              <div>
-                <h2 className="text-2xl font-bold mb-2">Our Properties</h2>
-                <p className="text-muted-foreground">
-                  We manage two premier commercial centers in San Diego County:
-                </p>
-                <ul className="mt-2 space-y-2">
-                  <li className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4" />
-                    Mercado Del Sol - Solana Beach
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4" />
-                    Mission Bay Center - Mission Bay
-                  </li>
-                </ul>
-              </div>
+              <h2 className="text-2xl font-bold mb-4 mx-2">Our Properties</h2>
             </div>
+            <h2 className="text-muted-foreground text-lg mb-4">
+              We manage two premier commercial centers in San Diego County:
+            </h2>
+            <ul className="mt-2 space-y-2">
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                Mercado Del Sol - Solana Beach
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                Mission Bay Center - Mission Bay
+              </li>
+            </ul>
           </div>
 
           <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm">
