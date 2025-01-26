@@ -24,17 +24,17 @@ export default function NavBar() {
               <button className="hover:text-gray-600 flex items-center text-lg">
                 Locations
               </button>
-              <div className="hidden group-hover:block absolute left-0 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
-                <div className="py-1">
+              <div className="hidden group-hover:block absolute left-0 w-48 rounded-lg shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
+                <div>
                   <Link
                     href="/solana-beach"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
                   >
                     Mercado Del Sol
                   </Link>
                   <Link
                     href="/mission-bay"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
                   >
                     Mission Bay Center
                   </Link>
