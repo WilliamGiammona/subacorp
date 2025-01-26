@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <div className="relative ">
-      <div className="relative h-[calc(100vh-80px)]">
+      <div className="relative h-[calc(100vh-60px)] md:h-[calc(100vh-80px)]">
         {/* Background Image with Blue Overlay */}
         <div
           className="absolute inset-0"

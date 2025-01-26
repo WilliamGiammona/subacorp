@@ -59,7 +59,7 @@ export default function NavBar() {
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-8 w-8" />
           </Button>
         </div>
 
