@@ -42,7 +42,7 @@ const featuredProperties: Property[] = [
   {
     id: 2,
     title: "Space Two",
-    location: "Solana Beach Center",
+    location: "Mercado Del Sol Center",
     type: "Office Space",
     size: "20,000 sq ft",
     image: "/api/placeholder/600/400",
