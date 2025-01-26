@@ -20,7 +20,7 @@ import {
   type CarouselApi,
 } from "../../components/ui/carousel";
 
-export default function Encinitas() {
+export default function SolanaBeach() {
   const [selectedListingIndex, setSelectedListingIndex] = useState<
     number | null
   >(null);
