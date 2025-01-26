@@ -17,18 +17,15 @@ import {
 const services = [
   {
     title: "Property Management",
-    description:
-      "Comprehensive management solutions for commercial property owners and investors",
+    description: "Comprehensive property maintenance and operations management",
     icon: Building2,
-    highlights: ["24/7 Maintenance", "Tenant Relations", "Financial Reporting"],
+    highlights: [
+      "Preventive Maintenance",
+      "Safety Compliance",
+      "Vendor Management",
+    ],
   },
-  {
-    title: "Investment Services",
-    description:
-      "Strategic investment opportunities and portfolio management for maximum returns",
-    icon: LineChart,
-    highlights: ["Market Analysis", "Due Diligence", "Portfolio Strategy"],
-  },
+
   {
     title: "Leasing Services",
     description:
@@ -40,32 +37,12 @@ const services = [
       "Space Planning",
     ],
   },
-  {
-    title: "Asset Management",
-    description:
-      "Maximize property value through strategic asset management and optimization",
-    icon: BadgeDollarSign,
-    highlights: [
-      "Value Enhancement",
-      "Risk Management",
-      "Performance Analysis",
-    ],
-  },
+
   {
     title: "Tenant Relations",
     description: "Dedicated support ensuring tenant satisfaction and retention",
     icon: Users2,
     highlights: ["Tenant Support", "Lease Administration", "Communication"],
-  },
-  {
-    title: "Facility Management",
-    description: "Comprehensive facility maintenance and operations management",
-    icon: ShieldCheck,
-    highlights: [
-      "Preventive Maintenance",
-      "Safety Compliance",
-      "Vendor Management",
-    ],
   },
 ];
 
