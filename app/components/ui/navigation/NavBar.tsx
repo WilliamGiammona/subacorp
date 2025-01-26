@@ -26,7 +26,7 @@ export default function NavBar() {
               <div className="hidden group-hover:block absolute left-0 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
                 <div className="py-1">
                   <Link
-                    href="/encinitas"
+                    href="/solana-beach"
                     className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     Mercado Del Sol
@@ -41,13 +41,16 @@ export default function NavBar() {
               </div>
             </div>
             <Link href="/services" className="hover:text-gray-600 text-lg">
-              Legal
+              Home
             </Link>
             <Link href="/about" className="hover:text-gray-600 text-lg">
               About
             </Link>
             <Link href="/contact" className="hover:text-gray-600 text-lg">
               Contact
+            </Link>
+            <Link href="/services" className="hover:text-gray-600 text-lg">
+              Legal
             </Link>
             <ModeToggle />
           </div>
