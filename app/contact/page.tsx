@@ -20,7 +20,7 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <Phone className="h-6 w-6 text-primary mr-3" />
               <h2 className="text-xl font-semibold">Phone</h2>
@@ -28,7 +28,7 @@ export default function Contact() {
             <p className="text-muted-foreground">(858) 555-0123</p>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <Mail className="h-6 w-6 text-primary mr-3" />
               <h2 className="text-xl font-semibold">Email</h2>
@@ -36,7 +36,7 @@ export default function Contact() {
             <p className="text-muted-foreground">info@subaproperties.com</p>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <Clock className="h-6 w-6 text-primary mr-3" />
               <h2 className="text-xl font-semibold">Office Hours</h2>
@@ -46,7 +46,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="mt-12 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm">
+        <div className="mt-12 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
               <h2 className="text-2xl font-bold mb-4">Send us a message</h2>

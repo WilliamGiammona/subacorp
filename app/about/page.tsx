@@ -16,7 +16,7 @@ export default function About() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className=" bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm max-w-2xl mx-auto">
+          <div className=" bg-white dark:bg-gray-800 rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow max-w-2xl mx-auto">
             <div className="flex">
               <History className="w-5 h-5 md:w-6 md:h-6 text-primary mt-1" />
               <h2 className="text-lg md:text-2xl font-bold mb-4 mx-2">
@@ -51,7 +51,7 @@ export default function About() {
             </ul>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm max-w-2xl mx-auto">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow max-w-2xl mx-auto">
             <h2 className="text-lg md:text-2xl font-bold mb-4">
               Our Commitment
             </h2>
