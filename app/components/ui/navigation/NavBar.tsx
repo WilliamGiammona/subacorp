@@ -40,7 +40,7 @@ export default function NavBar() {
                 </div>
               </div>
             </div>
-            <Link href="/services" className="hover:text-gray-600 text-lg">
+            <Link href="/" className="hover:text-gray-600 text-lg">
               Home
             </Link>
             <Link href="/about" className="hover:text-gray-600 text-lg">
