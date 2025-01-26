@@ -47,7 +47,7 @@ export default function NavBar() {
             <Link href="/contact" className="hover:text-gray-600 text-lg">
               Contact
             </Link>
-            <Link href="/services" className="hover:text-gray-600 text-lg">
+            <Link href="/legal" className="hover:text-gray-600 text-lg">
               Legal
             </Link>
             <ModeToggle />
@@ -96,7 +96,7 @@ export default function NavBar() {
               )}
             </div>
             <Link
-              href="/services"
+              href="/legal"
               className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
             >
               Legal
