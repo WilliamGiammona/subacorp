@@ -213,7 +213,7 @@ export default function Encinitas() {
           {listings.map((listing, index) => (
             <Card
               key={listing.id}
-              className="hover:shadow-lg transition-shadow cursor-pointer"
+              className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer"
               onClick={() => setSelectedListingIndex(index)}
             >
               <div
@@ -261,7 +261,7 @@ export default function Encinitas() {
           {tenants.map((tenant, index) => (
             <Card
               key={tenant.id}
-              className="hover:shadow-lg transition-shadow cursor-pointer"
+              className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer"
               onClick={() => setSelectedTenantIndex(index)}
             >
               <div className="relative h-48 w-full">
