@@ -25,7 +25,7 @@ export default function NavBar() {
                 Locations
               </button>
               <div className="hidden group-hover:block absolute left-0 w-48 rounded-lg shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
-                <div>
+                <div className="p-1">
                   <Link
                     href="/solana-beach"
                     className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
