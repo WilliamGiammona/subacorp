@@ -1,71 +1,55 @@
 "use client";
 
-import { Menu, Moon, Sun, ChevronDown } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useState } from "react";
+import { ModeToggle } from "@/app/components/ui/mode-toggle";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-sm">
+    <nav className="bg-white dark:bg-gray-800 shadow-sm md:py-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link
-            href="/"
-            className="font-bold text-xl hover:bg-gray-100 dark:hover:bg-gray-700"
-          >
+          <Link href="/" className="font-bold text-xl">
             SUBA Corporation
           </Link>
 
           <div className="hidden md:flex items-center space-x-4">
             <div className="relative group">
-              <button className="hover:text-gray-600 flex items-center">
+              <button className="hover:text-gray-600 flex items-center text-lg">
                 Locations
               </button>
               <div className="hidden group-hover:block absolute left-0 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
                 <div className="py-1">
                   <Link
-                    href="/solana-beach"
-                    className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+                    href="/encinitas"
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
-                    Solana Beach
+                    Mercado Del Sol
                   </Link>
                   <Link
                     href="/mission-bay"
-                    className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
-                    Mission Bay
+                    Mission Bay Center
                   </Link>
                 </div>
               </div>
             </div>
-
-            <Link href="/about" className="hover:text-gray-600">
-              About
-            </Link>
-            <Link href="/contact" className="hover:text-gray-600">
-              Contact
-            </Link>
-            <Link href="/services" className="hover:text-gray-600">
+            <Link href="/services" className="hover:text-gray-600 text-lg">
               Legal
             </Link>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
+            <Link href="/about" className="hover:text-gray-600 text-lg">
+              About
+            </Link>
+            <Link href="/contact" className="hover:text-gray-600 text-lg">
+              Contact
+            </Link>
+            <ModeToggle />
           </div>
 
           <Button
@@ -86,26 +70,30 @@ export default function NavBar() {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 Locations
-                <ChevronDown className="ml-1 h-4 w-4 inline" />
               </button>
               {isDropdownOpen && (
                 <div className="pl-8 space-y-2">
                   <Link
-                    href="/solana-beach"
+                    href="/encinitas"
                     className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
                   >
-                    Solana Beach
+                    Mercado Del Sol
                   </Link>
                   <Link
                     href="/mission-bay"
                     className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
                   >
-                    Mission Bay
+                    Mission Bay Center
                   </Link>
                 </div>
               )}
             </div>
-
+            <Link
+              href="/services"
+              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
+            >
+              Legal
+            </Link>
             <Link
               href="/about"
               className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
@@ -118,25 +106,9 @@ export default function NavBar() {
             >
               Contact
             </Link>
-            <Link
-              href="/services"
-              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
-            >
-              Legal
-            </Link>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="ml-4"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
+            <div className="ml-4">
+              <ModeToggle />
+            </div>
           </div>
         )}
       </div>
