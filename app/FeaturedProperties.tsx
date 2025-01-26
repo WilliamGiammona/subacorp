@@ -106,7 +106,7 @@ export default function FeaturedProperties() {
         <div className="text-center mt-8 sm:mt-12 flex flex-col sm:flex-row justify-center gap-4">
           <Link href="/solana-beach">
             <Button
-              className="w-full sm:w-auto py-4 sm:py-8"
+              className="w-full sm:w-auto py-4 sm:py-8 transition-all hover:scale-105"
               variant="outline"
               size="lg"
             >
@@ -119,7 +119,7 @@ export default function FeaturedProperties() {
           </Link>
           <Link href="/mission-bay">
             <Button
-              className="w-full sm:w-auto py-4 sm:py-8"
+              className="w-full sm:w-auto py-4 sm:py-8 transition-all hover:scale-105"
               variant="outline"
               size="lg"
             >
