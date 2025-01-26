@@ -19,6 +19,9 @@ export default function NavBar() {
           </Link>
 
           <div className="hidden md:flex items-center space-x-4">
+            <Link href="/" className="hover:text-gray-600 text-lg">
+              Home
+            </Link>
             <div className="relative group">
               <button className="hover:text-gray-600 flex items-center text-lg">
                 Locations
@@ -40,9 +43,6 @@ export default function NavBar() {
                 </div>
               </div>
             </div>
-            <Link href="/" className="hover:text-gray-600 text-lg">
-              Home
-            </Link>
             <Link href="/about" className="hover:text-gray-600 text-lg">
               About
             </Link>
