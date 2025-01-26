@@ -16,7 +16,7 @@ export default function NavBar() {
         <div className="flex items-center justify-between h-16">
           <h1 className="font-bold text-xl">SUBA Corporation</h1>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-6">
             <Link href="/" className="hover:text-gray-600 text-lg">
               Home
             </Link>
