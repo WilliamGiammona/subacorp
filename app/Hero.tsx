@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-[calc(100vh-80px)]">
       <div className="relative h-[85vh]">
         {/* Background Image with Blue Overlay */}
         <div
