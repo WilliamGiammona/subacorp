@@ -11,7 +11,7 @@ export default function NavBar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <nav className="bg-white dark:bg-[#111827] shadow-sm md:py-2">
+    <nav className="bg-white dark:bg-[#1f2937] shadow-sm md:py-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <h1 className="font-bold text-xl">SUBA Corporation</h1>
