@@ -8,8 +8,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/app/components/ui/card";
-import { Building2, MapPin, Grid2x2 } from "lucide-react";
+import { Building2, MapPin, Grid2x2, X, Download } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/app/components/ui/carousel";
 import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 
 interface Property {
   id: number;
@@ -48,8 +58,91 @@ const featuredProperties: Property[] = [
 ];
 
 export default function FeaturedProperties() {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+
+    if (selectedIndex !== null) {
+      api.scrollTo(selectedIndex);
+    }
+  }, [api, selectedIndex]);
+
+  const handleDownload = async () => {
+    if (selectedIndex === null) return;
+    const property = featuredProperties[current - 1];
+    const a = document.createElement("a");
+    a.href = "/images/Interior.jpg";
+    a.download = `${property.title}.jpg`;
+    a.click();
+  };
+
   return (
     <section className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
+      {selectedIndex !== null && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur">
+          <div className="relative max-w-4xl w-full h-[80vh]">
+            <div className="absolute top-0 right-0 z-[60] flex items-center gap-4 text-white">
+              <span>
+                {current} / {count}
+              </span>
+              <button
+                onClick={() => setSelectedIndex(null)}
+                className="hover:text-gray-300"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            <Carousel
+              className="w-full h-full"
+              setApi={setApi}
+              opts={{ loop: true }}
+            >
+              <CarouselContent>
+                {featuredProperties.map((property) => (
+                  <CarouselItem key={property.id} className="h-[80vh]">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src="/images/Interior.jpg"
+                        alt={property.title}
+                        fill
+                        className="rounded-lg object-contain"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
+
+            <div className="absolute bottom-4 right-4">
+              <button
+                className="text-white hover:text-gray-300"
+                onClick={handleDownload}
+              >
+                <Download size={24} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
@@ -62,10 +155,11 @@ export default function FeaturedProperties() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-          {featuredProperties.map((property) => (
+          {featuredProperties.map((property, index) => (
             <Card
               key={property.id}
               className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer"
+              onClick={() => setSelectedIndex(index)}
             >
               <div
                 className="h-36 sm:h-48 w-full rounded-t-lg"
