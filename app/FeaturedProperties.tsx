@@ -65,7 +65,7 @@ export default function FeaturedProperties() {
           {featuredProperties.map((property) => (
             <Card
               key={property.id}
-              className="hover:shadow-lg transition-shadow"
+              className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer"
             >
               <div
                 className="h-36 sm:h-48 w-full rounded-t-lg"
