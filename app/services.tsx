@@ -5,14 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./components/ui/card";
-import {
-  Building2,
-  LineChart,
-  BadgeDollarSign,
-  Key,
-  Users2,
-  ShieldCheck,
-} from "lucide-react";
+import { Building2, Key, Users2 } from "lucide-react";
 
 export default function Services() {
   const services = [
