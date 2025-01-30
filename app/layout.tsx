@@ -3,8 +3,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/app/components/ui/themeprovider";
 
 export const metadata: Metadata = {
-  title: "Suba Corporation",
-  description: "Suba Corporation website",
+  title: "SUBA Corporation",
+  description: "SUBA Corporation website",
 };
 
 export default function RootLayout({
