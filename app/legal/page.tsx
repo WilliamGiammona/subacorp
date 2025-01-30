@@ -11,15 +11,15 @@ const Legal = () => {
     <div className="min-h-screen bg-background">
       <NavBar />
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-8 text-foreground">
-          Legal Documents
+        <h1 className="text-3xl font-bold mb-8 text-foreground text-center">
+          SUBA CORPORATION LEGAL DOCUMENTS
         </h1>
 
         <div className="space-y-8">
           {/* Privacy Policy PDF */}
           <Card>
             <CardHeader>
-              <CardTitle>Privacy Policy</CardTitle>
+              <CardTitle className="text-center">PRIVACY POLICY</CardTitle>
             </CardHeader>
             <CardContent>
               <div
@@ -38,7 +38,7 @@ const Legal = () => {
           {/* Terms of Use PDF */}
           <Card>
             <CardHeader>
-              <CardTitle>Terms of Use</CardTitle>
+              <CardTitle className="text-center">TERMS OF USE</CardTitle>
             </CardHeader>
             <CardContent>
               <div
