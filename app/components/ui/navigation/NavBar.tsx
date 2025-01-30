@@ -54,12 +54,13 @@ export default function NavBar() {
             <Link href="/about" className="hover:text-gray-600 text-lg">
               About
             </Link>
-            <Link href="/contact" className="hover:text-gray-600 text-lg">
-              Contact
-            </Link>
             <Link href="/legal" className="hover:text-gray-600 text-lg">
               Legal
             </Link>
+            <Link href="/contact" className="hover:text-gray-600 text-lg">
+              Contact
+            </Link>
+
             <ModeToggle />
           </div>
 
@@ -112,17 +113,18 @@ export default function NavBar() {
               About
             </Link>
             <Link
-              href="/contact"
-              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
-            >
-              Contact
-            </Link>
-            <Link
               href="/legal"
               className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
             >
               Legal
             </Link>
+            <Link
+              href="/contact"
+              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
+            >
+              Contact
+            </Link>
+
             <div className="ml-4">
               <ModeToggle />
             </div>
