@@ -96,12 +96,6 @@ export default function NavBar() {
               )}
             </div>
             <Link
-              href="/legal"
-              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
-            >
-              Legal
-            </Link>
-            <Link
               href="/about"
               className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
             >
@@ -112,6 +106,12 @@ export default function NavBar() {
               className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
             >
               Contact
+            </Link>
+            <Link
+              href="/legal"
+              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
+            >
+              Legal
             </Link>
             <div className="ml-4">
               <ModeToggle />
