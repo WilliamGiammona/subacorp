@@ -17,7 +17,7 @@ export default function NavBar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-2">
             <Image
-              src="/images/Suba.png"
+              src="/images/SubaCorpLogo.png"
               alt="SUBA Corporation Logo"
               width={40}
               height={40}
