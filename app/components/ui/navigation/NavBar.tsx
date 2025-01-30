@@ -3,6 +3,7 @@
 import { Menu } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { ModeToggle } from "@/app/components/ui/mode-toggle";
 
@@ -12,9 +13,18 @@ export default function NavBar() {
 
   return (
     <nav className="bg-white dark:bg-[#1f2937] shadow-sm md:py-2">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-between h-16">
-          <h1 className="font-bold text-xl">SUBA Corporation</h1>
+          <div className="flex items-center space-x-2">
+            <Image
+              src="/images/SubaCorpLogo.jpg"
+              alt="SUBA Corporation Logo"
+              width={40}
+              height={40}
+              className="rounded-md"
+            />
+            <h1 className="font-bold text-xl">SUBA Corporation</h1>
+          </div>
 
           <div className="hidden md:flex items-center space-x-6">
             <Link href="/" className="hover:text-gray-600 text-lg">
