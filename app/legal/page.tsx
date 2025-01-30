@@ -23,15 +23,17 @@ const Legal = () => {
                 <CardTitle className="text-center">PRIVACY POLICY</CardTitle>
               </CardHeader>
               <CardContent>
-                <div
-                  className="relative w-full rounded-md border border-border"
-                  style={{ paddingTop: "100%" }}
-                >
-                  <iframe
-                    src="/legal/SUBA-Privacy-Policy.pdf"
-                    className="absolute top-0 left-0 w-full h-full rounded-md"
-                    title="Privacy Policy"
-                  />
+                <div className="w-full max-w-4xl mx-auto">
+                  <div
+                    className="relative w-full rounded-md overflow-hidden"
+                    style={{ paddingTop: "100%" }}
+                  >
+                    <iframe
+                      src="/legal/SUBA-Privacy-Policy.pdf"
+                      className="absolute top-0 left-0 w-full h-full"
+                      title="Privacy Policy"
+                    />
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -42,15 +44,17 @@ const Legal = () => {
                 <CardTitle className="text-center">TERMS OF USE</CardTitle>
               </CardHeader>
               <CardContent>
-                <div
-                  className="relative w-full rounded-md border border-border"
-                  style={{ paddingTop: "100%" }}
-                >
-                  <iframe
-                    src="/legal/SUBA-TOU.pdf"
-                    className="absolute top-0 left-0 w-full h-full rounded-md"
-                    title="Terms of Use"
-                  />
+                <div className="w-full max-w-4xl mx-auto">
+                  <div
+                    className="relative w-full rounded-md overflow-hidden"
+                    style={{ paddingTop: "100%" }}
+                  >
+                    <iframe
+                      src="/legal/SUBA-TOU.pdf"
+                      className="absolute top-0 left-0 w-full h-full"
+                      title="Terms of Use"
+                    />
+                  </div>
                 </div>
               </CardContent>
             </Card>
