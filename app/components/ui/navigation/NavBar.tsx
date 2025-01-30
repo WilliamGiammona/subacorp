@@ -23,7 +23,7 @@ export default function NavBar() {
               height={40}
               className="rounded-md"
             />
-            <h1 className="font-bold text-xl">SUBA Corporation</h1>
+            <h1 className="font-bold text-xl">SUBA CORPORATION</h1>
           </div>
 
           <div className="hidden md:flex items-center space-x-6">
