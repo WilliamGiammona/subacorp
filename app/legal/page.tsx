@@ -19,24 +19,15 @@ const Legal = () => {
           <div className="space-y-8">
             {/* Privacy Policy PDF */}
             <Card className="border-none">
-              <CardHeader>
-                <CardTitle className="text-center">PRIVACY POLICY</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="w-full max-w-4xl mx-auto">
-                  <object
-                    data="/legal/SUBA-Privacy-Policy.pdf"
-                    type="application/pdf"
-                    className="w-full h-screen"
-                  >
-                    <p>
-                      PDF cannot be displayed.{" "}
-                      <a href="/legal/SUBA-Privacy-Policy.pdf">
-                        Download instead
-                      </a>
-                    </p>
-                  </object>
-                </div>
+              <CardContent className="text-center">
+                <a
+                  href="/legal/SUBA-Privacy-Policy.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-primary text-black dark:text-white rounded-md hover:bg-primary/90"
+                >
+                  View Privacy Policy
+                </a>
               </CardContent>
             </Card>
 
