@@ -110,25 +110,25 @@ export default function MissionBay() {
   const tenants = [
     {
       id: 1,
-      name: "Body Quest Fitness",
+      name: "Sushi Ota",
       since: "2015",
       imageUrl: "/images/Interior.jpg",
     },
     {
       id: 2,
-      name: "Ocean View Cleaners",
+      name: "Lanna Thai",
       since: "2018",
       imageUrl: "/images/Interior.jpg",
     },
     {
       id: 3,
-      name: "Pacific Coffee Co.",
+      name: "7 Eleven",
       since: "2019",
       imageUrl: "/images/Interior.jpg",
     },
     {
       id: 4,
-      name: "Coastal Insurance Group",
+      name: "Cloud Dry Cleaning",
       since: "2020",
       imageUrl: "/images/Interior.jpg",
     },
