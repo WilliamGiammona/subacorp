@@ -25,7 +25,7 @@ export default function Contact() {
               <Phone className="h-6 w-6 text-primary mr-3" />
               <h2 className="text-xl font-semibold">Phone</h2>
             </div>
-            <p className="text-muted-foreground">(858) 555-0123</p>
+            <p className="text-muted-foreground">(858) 481-7466</p>
           </div>
 
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
