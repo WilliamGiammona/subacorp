@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/app/components/ui/themeprovider";
 
 export const metadata: Metadata = {
-  title: "SUBA Corporation",
+  title: "SUBA CORP",
   description: "SUBA Corporation website",
   icons: {
     icon: "/images/favicon.ico",
