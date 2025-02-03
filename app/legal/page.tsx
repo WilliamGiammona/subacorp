@@ -20,7 +20,9 @@ const Legal = () => {
             {/* Privacy Policy */}
             <Card className="border-none">
               <CardHeader>
-                <CardTitle className="text-center">PRIVACY POLICY</CardTitle>
+                <CardTitle className="text-center underline decoration-2 underline-offset-8">
+                  PRIVACY POLICY
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="w-full max-w-4xl mx-auto">
@@ -29,7 +31,7 @@ const Legal = () => {
                       href="/legal/SUBA-Privacy-Policy.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block px-6 py-3 bg-primary text-black dark:text-white rounded-md hover:bg-primary/90"
+                      className="inline-block px-6 py-3 bg-primary text-black dark:text-white rounded-md hover:opacity-50"
                     >
                       View Privacy Policy
                     </a>
@@ -41,7 +43,9 @@ const Legal = () => {
             {/* Terms of Use */}
             <Card className="border-none">
               <CardHeader>
-                <CardTitle className="text-center">TERMS OF USE</CardTitle>
+                <CardTitle className="text-center underline decoration-2 underline-offset-8">
+                  TERMS OF USE
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="w-full max-w-4xl mx-auto">
@@ -50,7 +54,7 @@ const Legal = () => {
                       href="/legal/SUBA-TOU.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block px-6 py-3 bg-primary text-black dark:text-white rounded-md hover:bg-primary/90"
+                      className="inline-block px-6 py-3 bg-primary text-black dark:text-white rounded-md hover:opacity-50"
                     >
                       View Terms of Use
                     </a>
