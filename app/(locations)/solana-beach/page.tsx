@@ -122,7 +122,7 @@ export default function SolanaBeach() {
     },
     {
       id: 3,
-      name: "Bangkok Bay.",
+      name: "Bangkok Bay",
       since: "2019",
       imageUrl: "/images/Interior.jpg",
     },
