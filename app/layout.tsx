@@ -5,6 +5,9 @@ import { ThemeProvider } from "@/app/components/ui/themeprovider";
 export const metadata: Metadata = {
   title: "SUBA Corporation",
   description: "SUBA Corporation website",
+  icons: {
+    icon: "/images/favicon.ico",
+  },
 };
 
 export default function RootLayout({
