@@ -34,7 +34,7 @@ export default function Contact() {
               <h2 className="text-xl font-semibold">Email</h2>
             </div>
             <p className="text-muted-foreground">barbara@subacorp.com</p>
-            <p className="text-muted-foreground">Patti@subacorp.com</p>
+            <p className="text-muted-foreground">patti@subacorp.com</p>
           </div>
 
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
