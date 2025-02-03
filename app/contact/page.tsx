@@ -77,7 +77,7 @@ export default function Contact() {
                     className="w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-transparent"
                   ></textarea>
                 </div>
-                <Button className="w-full">Send Message</Button>
+                <Button className="w-full ">Send Message</Button>
               </form>
             </div>
 
