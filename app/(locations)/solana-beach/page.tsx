@@ -202,6 +202,20 @@ export default function SolanaBeach() {
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-300">
             731 Hwy 101, Solana Beach, CA 92075
           </p>
+          <p className="mt-8  text-gray-600 dark:text-gray-300 text-sm md:text-base">
+            Mercado Del Sol is conveniently located in the coastal community of
+            Solana Beach, near the edge of Del Mar. This center has easy access
+            to highway 101 as well as ample parking for customers, and currently
+            has award winning restaurants, a convenience store, and many medical
+            and professional tenants. The center is also near the Del Mar Race
+            Track as well as the Coaster tation. The median income is
+            approximately $150,820 for Solana Beach and $192,845 for Del Mar.
+            The population of Solana beach is 12,675 and the population of Del
+            Mar is 3,921. with the average home price being $982,000. The
+            immediate surrounding population is 48,000 with a density of 6,250
+            people per square mile.
+            <br />
+          </p>
         </div>
       </div>
 
