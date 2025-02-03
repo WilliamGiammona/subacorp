@@ -40,7 +40,7 @@ const Legal = () => {
                       href="/legal/SUBA-Privacy-Policy.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90"
+                      className="inline-block px-6 py-3 bg-primary text-black dark:text-white rounded-md hover:bg-primary/90"
                     >
                       View Privacy Policy
                     </a>
@@ -72,7 +72,7 @@ const Legal = () => {
                       href="/legal/SUBA-TOU.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90"
+                      className="inline-block px-6 py-3 bg-primary text-black dark:text-white rounded-md hover:bg-primary/90"
                     >
                       View Terms of Use
                     </a>
