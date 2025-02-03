@@ -24,18 +24,7 @@ const Legal = () => {
               </CardHeader>
               <CardContent>
                 <div className="w-full max-w-4xl mx-auto">
-                  {/* Desktop view */}
-                  <div className="hidden lg:block">
-                    <div className="relative w-full rounded-md overflow-hidden h-[800px]">
-                      <iframe
-                        src="/legal/SUBA-Privacy-Policy.pdf"
-                        className="absolute top-0 left-0 w-full h-full"
-                        title="Privacy Policy"
-                      />
-                    </div>
-                  </div>
-                  {/* Mobile view */}
-                  <div className="lg:hidden text-center">
+                  <div className=" text-center">
                     <a
                       href="/legal/SUBA-Privacy-Policy.pdf"
                       target="_blank"
@@ -56,18 +45,7 @@ const Legal = () => {
               </CardHeader>
               <CardContent>
                 <div className="w-full max-w-4xl mx-auto">
-                  {/* Desktop view */}
-                  <div className="hidden lg:block">
-                    <div className="relative w-full rounded-md overflow-hidden h-[800px]">
-                      <iframe
-                        src="/legal/SUBA-TOU.pdf"
-                        className="absolute top-0 left-0 w-full h-full"
-                        title="Terms of Use"
-                      />
-                    </div>
-                  </div>
-                  {/* Mobile view */}
-                  <div className="lg:hidden text-center">
+                  <div className=" text-center">
                     <a
                       href="/legal/SUBA-TOU.pdf"
                       target="_blank"
