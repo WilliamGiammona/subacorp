@@ -211,9 +211,7 @@ export default function SolanaBeach() {
             Track as well as the Coaster tation. The median income is
             approximately $150,820 for Solana Beach and $192,845 for Del Mar.
             The population of Solana beach is 12,675 and the population of Del
-            Mar is 3,921. with the average home price being $982,000. The
-            immediate surrounding population is 48,000 with a density of 6,250
-            people per square mile.
+            Mar is 3,921.
             <br />
           </p>
         </div>
