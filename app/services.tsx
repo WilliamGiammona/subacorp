@@ -27,9 +27,9 @@ export default function Services() {
         "Full-service leasing solutions for both property owners and prospective tenants",
       icon: Key,
       highlights: [
-        "Tenant Representation",
-        "Lease Negotiation",
-        "Space Planning",
+        "Preventive Maintenance",
+        "Safety Compliance",
+        "Vendor Management",
       ],
     },
 
