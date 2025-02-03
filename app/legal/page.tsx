@@ -24,13 +24,18 @@ const Legal = () => {
               </CardHeader>
               <CardContent>
                 <div className="w-full max-w-4xl mx-auto">
-                  <div className="relative w-full rounded-md overflow-hidden h-screen md:h-[800px]">
-                    <iframe
-                      src="/legal/SUBA-Privacy-Policy.pdf"
-                      className="absolute top-0 left-0 w-full h-full"
-                      title="Privacy Policy"
-                    />
-                  </div>
+                  <object
+                    data="/legal/SUBA-Privacy-Policy.pdf"
+                    type="application/pdf"
+                    className="w-full h-screen"
+                  >
+                    <p>
+                      PDF cannot be displayed.{" "}
+                      <a href="/legal/SUBA-Privacy-Policy.pdf">
+                        Download instead
+                      </a>
+                    </p>
+                  </object>
                 </div>
               </CardContent>
             </Card>
@@ -42,13 +47,16 @@ const Legal = () => {
               </CardHeader>
               <CardContent>
                 <div className="w-full max-w-4xl mx-auto">
-                  <div className="relative w-full rounded-md overflow-hidden h-screen md:h-[800px]">
-                    <iframe
-                      src="/legal/SUBA-TOU.pdf"
-                      className="absolute top-0 left-0 w-full h-full"
-                      title="Terms of Use"
-                    />
-                  </div>
+                  <object
+                    data="/legal/SUBA-TOU.pdf"
+                    type="application/pdf"
+                    className="w-full h-screen"
+                  >
+                    <p>
+                      PDF cannot be displayed.{" "}
+                      <a href="/legal/SUBA-TOU.pdf">Download instead</a>
+                    </p>
+                  </object>
                 </div>
               </CardContent>
             </Card>
