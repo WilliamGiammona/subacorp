@@ -116,19 +116,19 @@ export default function SolanaBeach() {
     },
     {
       id: 2,
-      name: "Ocean View Cleaners",
+      name: "JI Phone Repair",
       since: "2018",
       imageUrl: "/images/Interior.jpg",
     },
     {
       id: 3,
-      name: "Pacific Coffee Co.",
+      name: "Bangkok Bay.",
       since: "2019",
       imageUrl: "/images/Interior.jpg",
     },
     {
       id: 4,
-      name: "Coastal Insurance Group",
+      name: "Double Take",
       since: "2020",
       imageUrl: "/images/Interior.jpg",
     },
