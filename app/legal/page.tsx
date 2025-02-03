@@ -24,10 +24,7 @@ const Legal = () => {
               </CardHeader>
               <CardContent>
                 <div className="w-full max-w-4xl mx-auto">
-                  <div
-                    className="relative w-full rounded-md overflow-hidden"
-                    style={{ paddingTop: "100%" }}
-                  >
+                  <div className="relative w-full rounded-md overflow-hidden h-screen md:h-[800px]">
                     <iframe
                       src="/legal/SUBA-Privacy-Policy.pdf"
                       className="absolute top-0 left-0 w-full h-full"
@@ -45,10 +42,7 @@ const Legal = () => {
               </CardHeader>
               <CardContent>
                 <div className="w-full max-w-4xl mx-auto">
-                  <div
-                    className="relative w-full rounded-md overflow-hidden"
-                    style={{ paddingTop: "100%" }}
-                  >
+                  <div className="relative w-full rounded-md overflow-hidden h-screen md:h-[800px]">
                     <iframe
                       src="/legal/SUBA-TOU.pdf"
                       className="absolute top-0 left-0 w-full h-full"
