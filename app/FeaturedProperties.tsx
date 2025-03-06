@@ -30,7 +30,6 @@ const solanaBeachListings = [
     price: "Price Available Upon Request",
     images: [
       "/images/solana-beach/suite1C/Suite1CPage1.jpg",
-      "/images/solana-beach/suite1C/Suite1CBathroomPage2.jpg",
       "/images/solana-beach/suite1C/Suite1CPage3.jpg",
       "/images/solana-beach/suite1C/Suite1CPage4.jpg",
       "/images/solana-beach/suite1C/Suite1CPage5.jpg",
