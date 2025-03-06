@@ -22,8 +22,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { solanaBeachListings } from "./(locations)/solana-beach/page";
 
-// You can remove the Property interface and featuredProperties array
-
 export default function FeaturedProperties() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
@@ -137,7 +135,7 @@ export default function FeaturedProperties() {
           {solanaBeachListings.map((property, index) => (
             <Card
               key={property.id}
-              className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer"
+              className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer flex flex-col"
               onClick={() => handlePropertyClick(index)}
             >
               <div
@@ -153,7 +151,7 @@ export default function FeaturedProperties() {
                   {property.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <div className="space-y-2">
                   <div className="flex items-center text-muted-foreground text-sm sm:text-base">
                     <MapPin className="h-4 w-4 mr-2 flex-shrink-0" />
@@ -167,17 +165,32 @@ export default function FeaturedProperties() {
                     <Grid2x2 className="h-4 w-4 mr-2 flex-shrink-0" />
                     {property.sqft} sq ft
                   </div>
+
+                  {/* Features section */}
+                  {property.features && property.features.length > 0 && (
+                    <div className="mt-3 pt-2 border-t">
+                      <h4 className="font-medium text-sm mb-1">Features:</h4>
+                      <ul className="space-y-1">
+                        {property.features.map((feature, idx) => (
+                          <li
+                            key={idx}
+                            className="text-sm flex justify-between"
+                          >
+                            <span>{feature.name}</span>
+                            <span className="font-medium">
+                              {feature.status}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </CardContent>
-              <CardFooter>
-                <Link
-                  href={`/solana-beach#${property.title
-                    .replace(/\s+/g, "-")
-                    .toLowerCase()}`}
-                  className="w-full"
-                >
-                  <Button className="w-full">View Details</Button>
-                </Link>
+              <CardFooter className="border-t pt-4">
+                <p className="w-full text-center font-semibold">
+                  {property.price}
+                </p>
               </CardFooter>
             </Card>
           ))}
