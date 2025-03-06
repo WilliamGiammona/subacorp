@@ -204,14 +204,23 @@ export default function SolanaBeach() {
           </p>
           <p className="mt-8  text-gray-600 dark:text-gray-300 text-sm md:text-base">
             Mercado Del Sol is conveniently located in the coastal community of
-            Solana Beach, near the edge of Del Mar. This center has easy access
-            to highway 101 as well as ample parking for customers, and currently
-            has award winning restaurants, a convenience store, and many medical
-            and professional tenants. The center is also near the Del Mar Race
-            Track as well as the Coaster tation. The median income is
-            approximately $150,820 for Solana Beach and $192,845 for Del Mar.
-            The population of Solana beach is 12,675 and the population of Del
-            Mar is 3,921.
+            Solana Beach, near the edge of Del Mar, giving it a very prestigious
+            location between two very desirable and affluent cities. This
+            commercial center is located on Highway 101 and has easy access to
+            Interstate 5 Freeway. The property is home to Bangkok Bay Thai
+            restaurant, a continuous winner of the best restaurant year after
+            year in the North County area of San Diego County. There are also
+            several retail shops and professional offices in the center. The
+            population in Solana Beach is approximately 12,675 and Del Mar has a
+            population of approximately 3,921. The median household income for
+            Solana Beach is $150,820.00 and Del Mar is $192,845.00. The center
+            has sufficient free parking and there is also plenty of street
+            parking on adjacent streets. Besides the fantastic tenants and their
+            offerings and services, it is located near other restaurants,
+            shopping, world class beaches, The Del Mar Racetrack, The
+            Coaster/Amtrak station and many other great services. We have a
+            couple of new spaces coming up for lease over the next couple of
+            months.
             <br />
           </p>
         </div>
