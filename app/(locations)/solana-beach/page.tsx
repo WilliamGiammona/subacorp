@@ -271,7 +271,7 @@ export default function SolanaBeach() {
           {listings.map((listing, index) => (
             <Card
               key={listing.id}
-              className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer"
+              className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer flex flex-col"
               onClick={() => handleListingClick(index)}
             >
               <div
@@ -285,7 +285,7 @@ export default function SolanaBeach() {
               <CardHeader>
                 <CardTitle>{listing.title}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <div className="space-y-2">
                   <div className="flex items-center text-muted-foreground">
                     <MapPin className="h-4 w-4 mr-2" />
@@ -321,7 +321,7 @@ export default function SolanaBeach() {
                   )}
                 </div>
               </CardContent>
-              <CardFooter className="border-t pt-4">
+              <CardFooter className="border-t pt-4 mt-auto">
                 <p className="w-full text-center font-semibold">
                   {listing.price}
                 </p>
