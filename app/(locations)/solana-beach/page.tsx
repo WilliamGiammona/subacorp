@@ -20,12 +20,29 @@ import {
   type CarouselApi,
 } from "../../components/ui/carousel";
 
+type Feature = {
+  name: string;
+  status: string;
+};
+
+type Listing = {
+  id: number;
+  title: string;
+  sqft: string;
+  price: string;
+  images: string[];
+  imageUrl: string;
+  type: string;
+  location: string;
+  features: Feature[];
+};
+
 export default function SolanaBeach() {
   const [selectedListingIndex, setSelectedListingIndex] = useState<
     number | null
   >(null);
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
-  const [api, setApi] = useState<CarouselApi>();
+  const [api, setApi] = useState<CarouselApi | undefined>(undefined);
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
@@ -48,7 +65,10 @@ export default function SolanaBeach() {
   const handleDownload = async () => {
     if (selectedListingIndex === null || selectedImages.length === 0) return;
 
-    const imageUrl = selectedImages[current - 1];
+    const imageIndex = current - 1;
+    if (imageIndex < 0 || imageIndex >= selectedImages.length) return;
+
+    const imageUrl = selectedImages[imageIndex];
     const fileName = `${listings[selectedListingIndex].title}-image-${current}`;
 
     const a = document.createElement("a");
@@ -57,7 +77,7 @@ export default function SolanaBeach() {
     a.click();
   };
 
-  const listings = [
+  const listings: Listing[] = [
     {
       id: 1,
       title: "Suite 1C",
@@ -75,65 +95,37 @@ export default function SolanaBeach() {
       imageUrl: "/images/solana-beach/suite1C/Suite1CPage1.jpg",
       type: "Retail Space",
       location: "Solana Beach",
+      features: [
+        { name: "AC/Heating", status: "Included" },
+        { name: "Bathroom", status: "Included" },
+        { name: "Upgrades", status: "Allowed" },
+      ],
     },
     {
       id: 2,
       title: "Suite 1D",
       sqft: "1112",
       price: "Price Available Upon Request",
-      images: ["/images/Interior.jpg"],
-      imageUrl: "/images/Interior.jpg", // Keeping for backwards compatibility
+      images: [
+        "/images/solana-beach/suite1D/Suite1DPage2.jpg",
+        "/images/solana-beach/suite1D/Suite1DPage3.jpg",
+        "/images/solana-beach/suite1D/Suite1DPage5.jpg",
+        "/images/solana-beach/suite1D/Suite1DPage6.jpg",
+        "/images/solana-beach/suite1D/Suite1DFullPicPage1.jpg",
+        "/images/solana-beach/suite1D/Suite1DFloorPlanPage4.jpg",
+      ],
+      imageUrl: "/images/solana-beach/suite1D/Suite1DPage2.jpg",
       type: "Office/Retail Space",
       location: "Solana Beach",
-    },
-    {
-      id: 3,
-      title: "Suite 201",
-      sqft: "1,500",
-      price: "Price Available Upon Request",
-      images: ["/images/Interior.jpg"],
-      imageUrl: "/images/Interior.jpg", // Keeping for backwards compatibility
-      type: "Office Space",
-      location: "Solana Beach",
-    },
-    {
-      id: 4,
-      title: "Suite 202",
-      sqft: "800",
-      price: "Price Available Upon Request",
-      images: ["/images/Interior.jpg"],
-      imageUrl: "/images/Interior.jpg", // Keeping for backwards compatibility
-      type: "Office Space",
-      location: "Solana Beach",
+      features: [
+        { name: "AC/Heating", status: "Included" },
+        { name: "Bathroom", status: "Included" },
+        { name: "Separate Office", status: "Included" },
+        { name: "Upgrades", status: "Allowed" },
+        { name: "Laminate Floors", status: "Included" },
+      ],
     },
   ];
-
-  // const tenants = [
-  //   {
-  //     id: 1,
-  //     name: "Body Quest Fitness",
-  //     since: "2015",
-  //     imageUrl: "/images/Interior.jpg",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "JI Phone Repair",
-  //     since: "2018",
-  //     imageUrl: "/images/Interior.jpg",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Bangkok Bay",
-  //     since: "2019",
-  //     imageUrl: "/images/Interior.jpg",
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "Double Take",
-  //     since: "2020",
-  //     imageUrl: "/images/Interior.jpg",
-  //   },
-  // ];
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -264,9 +256,29 @@ export default function SolanaBeach() {
                     <Grid2x2 className="h-4 w-4 mr-2" />
                     {listing.sqft} sq ft
                   </div>
+
+                  {/* Features section */}
+                  {listing.features && listing.features.length > 0 && (
+                    <div className="mt-3 pt-2 border-t">
+                      <h4 className="font-medium text-sm mb-1">Features:</h4>
+                      <ul className="space-y-1">
+                        {listing.features.map((feature, idx) => (
+                          <li
+                            key={idx}
+                            className="text-sm flex justify-between"
+                          >
+                            <span>{feature.name}</span>
+                            <span className="font-medium">
+                              {feature.status}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="border-t pt-4">
                 <p className="w-full text-center font-semibold">
                   {listing.price}
                 </p>
@@ -275,38 +287,6 @@ export default function SolanaBeach() {
           ))}
         </div>
       </div>
-
-      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-          Current Tenants
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tenants.map((tenant, index) => (
-            <Card
-              key={tenant.id}
-              className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer"
-              onClick={() => setSelectedTenantIndex(index)}
-            >
-              <div className="relative h-48 w-full">
-                <Image
-                  src={tenant.imageUrl}
-                  alt={tenant.name}
-                  fill
-                  className="object-cover rounded-t-lg"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-lg">{tenant.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Tenant since {tenant.since}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div> */}
     </div>
   );
 }
