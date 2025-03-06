@@ -9,7 +9,8 @@ export default function HeroSection() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("/images/SolanaBeachPic.jpg")',
+            backgroundImage:
+              'url("/images/SolanaBeachPicWithCleanersAndBodyQuestRemoved.jpg")',
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
