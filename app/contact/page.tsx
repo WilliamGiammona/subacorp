@@ -88,7 +88,9 @@ export default function Contact() {
                 <MapPin className="h-5 w-5 text-primary mt-1 mr-3" />
                 <div>
                   <p className="font-medium">Main Office</p>
-                  <p className="text-muted-foreground">731 Hwy 101</p>
+                  <p className="text-muted-foreground">
+                    731 South Hwy 101, Suite 2D
+                  </p>
                   <p className="text-muted-foreground">
                     Solana Beach, CA 92075
                   </p>
