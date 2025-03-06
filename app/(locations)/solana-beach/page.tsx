@@ -70,7 +70,7 @@ export default function SolanaBeach() {
         "/images/solana-beach/suite1C/Suite1CPage4.jpg",
         "/images/solana-beach/suite1C/Suite1CPage5.jpg",
         "/images/solana-beach/suite1C/Suite1CPage6.jpg",
-        "/images/solana-beach/suite1C/Suite1FloorPlanCPage7.jpg",
+        "/images/solana-beach/suite1C/Suite1CFloorPlanPage7.jpg",
       ],
       imageUrl: "/images/solana-beach/suite1C/Suite1CPage1.jpg",
       type: "Retail Space",
@@ -78,12 +78,12 @@ export default function SolanaBeach() {
     },
     {
       id: 2,
-      title: "Suite 102",
-      sqft: "950",
+      title: "Suite 1D",
+      sqft: "1112",
       price: "Price Available Upon Request",
       images: ["/images/Interior.jpg"],
       imageUrl: "/images/Interior.jpg", // Keeping for backwards compatibility
-      type: "Office Space",
+      type: "Office/Retail Space",
       location: "Solana Beach",
     },
     {
