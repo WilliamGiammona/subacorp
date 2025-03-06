@@ -20,45 +20,13 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { solanaBeachListings } from "./(locations)/solana-beach/page";
 
-interface Property {
-  id: number;
-  title: string;
-  location: string;
-  type: string;
-  size: string;
-  image: string;
-}
-
-const featuredProperties: Property[] = [
-  {
-    id: 1,
-    title: "Space One",
-    location: "Mission Bay Center",
-    type: "Office Space",
-    size: "10,000 sq ft",
-    image: "/api/placeholder/600/400",
-  },
-  {
-    id: 2,
-    title: "Space Two",
-    location: "Mercado Del Sol Center",
-    type: "Office Space",
-    size: "20,000 sq ft",
-    image: "/api/placeholder/600/400",
-  },
-  {
-    id: 3,
-    title: "Space Three",
-    location: "Mission Bay Center",
-    type: "Office Space",
-    size: "10,000sq ft",
-    image: "/api/placeholder/600/400",
-  },
-];
+// You can remove the Property interface and featuredProperties array
 
 export default function FeaturedProperties() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -74,20 +42,24 @@ export default function FeaturedProperties() {
     });
   }, [api]);
 
-  useEffect(() => {
-    if (!api) return;
-
-    if (selectedIndex !== null) {
-      api.scrollTo(selectedIndex);
-    }
-  }, [api, selectedIndex]);
+  const handlePropertyClick = (index: number) => {
+    setSelectedIndex(index);
+    setSelectedImages(solanaBeachListings[index].images);
+  };
 
   const handleDownload = async () => {
-    if (selectedIndex === null) return;
-    const property = featuredProperties[current - 1];
+    if (selectedIndex === null || selectedImages.length === 0) return;
+
+    const imageIndex = current - 1;
+    if (imageIndex < 0 || imageIndex >= selectedImages.length) return;
+
+    const imageUrl = selectedImages[imageIndex];
+    const property = solanaBeachListings[selectedIndex];
+    const fileName = `${property.title}-image-${current}`;
+
     const a = document.createElement("a");
-    a.href = "/images/Interior.jpg";
-    a.download = `${property.title}.jpg`;
+    a.href = imageUrl;
+    a.download = `${fileName}.jpg`;
     a.click();
   };
 
@@ -101,7 +73,10 @@ export default function FeaturedProperties() {
                 {current} / {count}
               </span>
               <button
-                onClick={() => setSelectedIndex(null)}
+                onClick={() => {
+                  setSelectedIndex(null);
+                  setSelectedImages([]);
+                }}
                 className="hover:text-gray-300"
               >
                 <X size={24} />
@@ -114,12 +89,12 @@ export default function FeaturedProperties() {
               opts={{ loop: true }}
             >
               <CarouselContent>
-                {featuredProperties.map((property) => (
-                  <CarouselItem key={property.id} className="h-[80vh]">
+                {selectedImages.map((imageUrl, index) => (
+                  <CarouselItem key={index} className="h-[80vh]">
                     <div className="relative w-full h-full">
                       <Image
-                        src="/images/Interior.jpg"
-                        alt={property.title}
+                        src={imageUrl}
+                        alt={`Property view ${index + 1}`}
                         fill
                         className="rounded-lg object-contain"
                       />
@@ -127,8 +102,12 @@ export default function FeaturedProperties() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-4" />
-              <CarouselNext className="right-4" />
+              {selectedImages.length > 1 && (
+                <>
+                  <CarouselPrevious className="left-4" />
+                  <CarouselNext className="right-4" />
+                </>
+              )}
             </Carousel>
 
             <div className="absolute bottom-4 right-4">
@@ -155,16 +134,16 @@ export default function FeaturedProperties() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-          {featuredProperties.map((property, index) => (
+          {solanaBeachListings.map((property, index) => (
             <Card
               key={property.id}
               className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer"
-              onClick={() => setSelectedIndex(index)}
+              onClick={() => handlePropertyClick(index)}
             >
               <div
                 className="h-36 sm:h-48 w-full rounded-t-lg"
                 style={{
-                  backgroundImage: `url("/images/Interior.jpg")`,
+                  backgroundImage: `url("${property.imageUrl}")`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -186,12 +165,19 @@ export default function FeaturedProperties() {
                   </div>
                   <div className="flex items-center text-muted-foreground text-sm sm:text-base">
                     <Grid2x2 className="h-4 w-4 mr-2 flex-shrink-0" />
-                    {property.size}
+                    {property.sqft} sq ft
                   </div>
                 </div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">View Details</Button>
+                <Link
+                  href={`/solana-beach#${property.title
+                    .replace(/\s+/g, "-")
+                    .toLowerCase()}`}
+                  className="w-full"
+                >
+                  <Button className="w-full">View Details</Button>
+                </Link>
               </CardFooter>
             </Card>
           ))}
