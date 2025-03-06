@@ -30,9 +30,9 @@ export const solanaBeachListings = [
     sqft: "1112",
     price: "Price Available Upon Request",
     images: [
+      "/images/solana-beach/suite1D/Suite1DPage6.jpg",
       "/images/solana-beach/suite1D/Suite1DPage3.jpg",
       "/images/solana-beach/suite1D/Suite1DPage5.jpg",
-      "/images/solana-beach/suite1D/Suite1DPage6.jpg",
       "/images/solana-beach/suite1D/Suite1DPage2.jpg",
       "/images/solana-beach/suite1D/Suite1DFullPicPage1.jpg",
       "/images/solana-beach/suite1D/Suite1DFloorPlanPage4.jpg",
@@ -157,9 +157,9 @@ export default function SolanaBeach() {
       sqft: "1112",
       price: "Price Available Upon Request",
       images: [
+        "/images/solana-beach/suite1D/Suite1DPage6.jpg",
         "/images/solana-beach/suite1D/Suite1DPage3.jpg",
         "/images/solana-beach/suite1D/Suite1DPage5.jpg",
-        "/images/solana-beach/suite1D/Suite1DPage6.jpg",
         "/images/solana-beach/suite1D/Suite1DPage2.jpg",
         "/images/solana-beach/suite1D/Suite1DFullPicPage1.jpg",
         "/images/solana-beach/suite1D/Suite1DFloorPlanPage4.jpg",
