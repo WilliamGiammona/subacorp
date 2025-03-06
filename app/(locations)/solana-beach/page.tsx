@@ -1,55 +1,5 @@
 "use client";
 
-export const solanaBeachListings = [
-  {
-    id: 1,
-    title: "Suite 1C",
-    sqft: "1,358",
-    price: "Price Available Upon Request",
-    images: [
-      "/images/solana-beach/suite1C/Suite1CPage1.jpg",
-      "/images/solana-beach/suite1C/Suite1CBathroomPage2.jpg",
-      "/images/solana-beach/suite1C/Suite1CPage3.jpg",
-      "/images/solana-beach/suite1C/Suite1CPage4.jpg",
-      "/images/solana-beach/suite1C/Suite1CPage5.jpg",
-      "/images/solana-beach/suite1C/Suite1CPage6.jpg",
-      "/images/solana-beach/suite1C/Suite1CFloorPlanPage7.jpg",
-    ],
-    imageUrl: "/images/solana-beach/suite1C/Suite1CPage1.jpg",
-    type: "Retail Space",
-    location: "Solana Beach",
-    features: [
-      { name: "AC/Heating", status: "Included" },
-      { name: "Bathroom", status: "Included" },
-      { name: "Upgrades", status: "Allowed" },
-    ],
-  },
-  {
-    id: 2,
-    title: "Suite 1D",
-    sqft: "1112",
-    price: "Price Available Upon Request",
-    images: [
-      "/images/solana-beach/suite1D/Suite1DPage6.jpg",
-      "/images/solana-beach/suite1D/Suite1DPage3.jpg",
-      "/images/solana-beach/suite1D/Suite1DPage5.jpg",
-      "/images/solana-beach/suite1D/Suite1DPage2.jpg",
-      "/images/solana-beach/suite1D/Suite1DFullPicPage1.jpg",
-      "/images/solana-beach/suite1D/Suite1DFloorPlanPage4.jpg",
-    ],
-    imageUrl: "/images/solana-beach/suite1D/Suite1DPage6.jpg",
-    type: "Office/Retail Space",
-    location: "Solana Beach",
-    features: [
-      { name: "AC/Heating", status: "Included" },
-      { name: "Bathroom", status: "Included" },
-      { name: "Separate Office", status: "Included" },
-      { name: "Upgraded", status: "Allowed" },
-      { name: "Laminate Floors", status: "Included" },
-    ],
-  },
-];
-
 import NavBar from "@/app/components/ui/navigation/NavBar";
 import {
   Card,
@@ -88,45 +38,6 @@ type Listing = {
 };
 
 export default function SolanaBeach() {
-  const [selectedListingIndex, setSelectedListingIndex] = useState<
-    number | null
-  >(null);
-  const [selectedImages, setSelectedImages] = useState<string[]>([]);
-  const [api, setApi] = useState<CarouselApi | undefined>(undefined);
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) return;
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
-  const handleListingClick = (index: number) => {
-    setSelectedListingIndex(index);
-    setSelectedImages(listings[index].images);
-  };
-
-  const handleDownload = async () => {
-    if (selectedListingIndex === null || selectedImages.length === 0) return;
-
-    const imageIndex = current - 1;
-    if (imageIndex < 0 || imageIndex >= selectedImages.length) return;
-
-    const imageUrl = selectedImages[imageIndex];
-    const fileName = `${listings[selectedListingIndex].title}-image-${current}`;
-
-    const a = document.createElement("a");
-    a.href = imageUrl;
-    a.download = `${fileName}.jpg`;
-    a.click();
-  };
-
   const listings: Listing[] = [
     {
       id: 1,
@@ -171,11 +82,50 @@ export default function SolanaBeach() {
         { name: "AC/Heating", status: "Included" },
         { name: "Bathroom", status: "Included" },
         { name: "Separate Office", status: "Included" },
-        { name: "Laminated Floors", status: "Included" },
+        { name: "Laminate Floors", status: "Included" },
         { name: "Upgrades", status: "Allowed" },
       ],
     },
   ];
+
+  const [selectedListingIndex, setSelectedListingIndex] = useState<
+    number | null
+  >(null);
+  const [selectedImages, setSelectedImages] = useState<string[]>([]);
+  const [api, setApi] = useState<CarouselApi | undefined>(undefined);
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  const handleListingClick = (index: number) => {
+    setSelectedListingIndex(index);
+    setSelectedImages(listings[index].images);
+  };
+
+  const handleDownload = async () => {
+    if (selectedListingIndex === null || selectedImages.length === 0) return;
+
+    const imageIndex = current - 1;
+    if (imageIndex < 0 || imageIndex >= selectedImages.length) return;
+
+    const imageUrl = selectedImages[imageIndex];
+    const fileName = `${listings[selectedListingIndex].title}-image-${current}`;
+
+    const a = document.createElement("a");
+    a.href = imageUrl;
+    a.download = `${fileName}.jpg`;
+    a.click();
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">

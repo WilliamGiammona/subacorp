@@ -20,7 +20,57 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { solanaBeachListings } from "./(locations)/solana-beach/page";
+
+// Define the listings data directly in this file
+const solanaBeachListings = [
+  {
+    id: 1,
+    title: "Suite 1C",
+    sqft: "1,358",
+    price: "Price Available Upon Request",
+    images: [
+      "/images/solana-beach/suite1C/Suite1CPage1.jpg",
+      "/images/solana-beach/suite1C/Suite1CBathroomPage2.jpg",
+      "/images/solana-beach/suite1C/Suite1CPage3.jpg",
+      "/images/solana-beach/suite1C/Suite1CPage4.jpg",
+      "/images/solana-beach/suite1C/Suite1CPage5.jpg",
+      "/images/solana-beach/suite1C/Suite1CPage6.jpg",
+      "/images/solana-beach/suite1C/Suite1CFloorPlanPage7.jpg",
+    ],
+    imageUrl: "/images/solana-beach/suite1C/Suite1CPage1.jpg",
+    type: "Retail Space",
+    location: "Solana Beach",
+    features: [
+      { name: "AC/Heating", status: "Included" },
+      { name: "Bathroom", status: "Included" },
+      { name: "Upgrades", status: "Allowed" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Suite 1D",
+    sqft: "1112",
+    price: "Price Available Upon Request",
+    images: [
+      "/images/solana-beach/suite1D/Suite1DPage6.jpg",
+      "/images/solana-beach/suite1D/Suite1DPage3.jpg",
+      "/images/solana-beach/suite1D/Suite1DPage5.jpg",
+      "/images/solana-beach/suite1D/Suite1DPage2.jpg",
+      "/images/solana-beach/suite1D/Suite1DFullPicPage1.jpg",
+      "/images/solana-beach/suite1D/Suite1DFloorPlanPage4.jpg",
+    ],
+    imageUrl: "/images/solana-beach/suite1D/Suite1DPage6.jpg",
+    type: "Office/Retail Space",
+    location: "Solana Beach",
+    features: [
+      { name: "AC/Heating", status: "Included" },
+      { name: "Bathroom", status: "Included" },
+      { name: "Separate Office", status: "Included" },
+      { name: "Laminate Floors", status: "Included" },
+      { name: "Upgrades", status: "Allowed" },
+    ],
+  },
+];
 
 export default function FeaturedProperties() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
