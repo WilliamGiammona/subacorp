@@ -44,7 +44,6 @@ export default function Contact() {
             <p className="text-muted-foreground">
               Mon, Wed, Fri: 9:00 AM - 5:00 PM
             </p>
-            <p className="text-muted-foreground">Sat-Sun: Closed</p>
           </div>
         </div>
 
