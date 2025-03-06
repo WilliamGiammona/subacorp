@@ -9,7 +9,11 @@ export const solanaBeachListings = [
     images: [
       "/images/solana-beach/suite1C/Suite1CPage1.jpg",
       "/images/solana-beach/suite1C/Suite1CBathroomPage2.jpg",
-      // ...other images
+      "/images/solana-beach/suite1C/Suite1CPage3.jpg",
+      "/images/solana-beach/suite1C/Suite1CPage4.jpg",
+      "/images/solana-beach/suite1C/Suite1CPage5.jpg",
+      "/images/solana-beach/suite1C/Suite1CPage6.jpg",
+      "/images/solana-beach/suite1C/Suite1CFloorPlanPage7.jpg",
     ],
     imageUrl: "/images/solana-beach/suite1C/Suite1CPage1.jpg",
     type: "Retail Space",
@@ -28,7 +32,10 @@ export const solanaBeachListings = [
     images: [
       "/images/solana-beach/suite1D/Suite1DPage2.jpg",
       "/images/solana-beach/suite1D/Suite1DPage3.jpg",
-      // ...other images
+      "/images/solana-beach/suite1D/Suite1DPage5.jpg",
+      "/images/solana-beach/suite1D/Suite1DPage6.jpg",
+      "/images/solana-beach/suite1D/Suite1DFullPicPage1.jpg",
+      "/images/solana-beach/suite1D/Suite1DFloorPlanPage4.jpg",
     ],
     imageUrl: "/images/solana-beach/suite1D/Suite1DPage2.jpg",
     type: "Office/Retail Space",
