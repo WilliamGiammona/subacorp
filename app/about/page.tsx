@@ -46,7 +46,7 @@ export default function About() {
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                Mission Bay Center - Mission Bay
+                Mission Bay Center - Pacific Beach
               </li>
             </ul>
           </div>
