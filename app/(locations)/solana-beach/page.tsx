@@ -70,7 +70,7 @@ export default function SolanaBeach() {
         "/images/solana-beach/suite1C/Suite1CPage4.jpg",
         "/images/solana-beach/suite1C/Suite1CPage5.jpg",
         "/images/solana-beach/suite1C/Suite1CPage6.jpg",
-        "/images/solana-beach/suite1C/Suite1FloorPlanCPage7.pdf",
+        "/images/solana-beach/suite1C/Suite1FloorPlanCPage7.jpg",
       ],
       imageUrl: "/images/solana-beach/suite1C/Suite1CPage1.jpg",
       type: "Retail Space",
