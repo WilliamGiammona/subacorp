@@ -71,11 +71,11 @@ export default function SolanaBeach() {
   const listings = [
     {
       id: 1,
-      title: "Suite 101",
-      sqft: "1,200",
+      title: "Suite 1C",
+      sqft: "1,358",
       price: "Price Available Upon Request",
       imageUrl: "/images/Interior.jpg",
-      type: "Office Space",
+      type: "Retail Space",
       location: "Solana Beach",
     },
     {
