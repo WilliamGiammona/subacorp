@@ -1,5 +1,48 @@
 "use client";
 
+export const solanaBeachListings = [
+  {
+    id: 1,
+    title: "Suite 1C",
+    sqft: "1,358",
+    price: "Price Available Upon Request",
+    images: [
+      "/images/solana-beach/suite1C/Suite1CPage1.jpg",
+      "/images/solana-beach/suite1C/Suite1CBathroomPage2.jpg",
+      // ...other images
+    ],
+    imageUrl: "/images/solana-beach/suite1C/Suite1CPage1.jpg",
+    type: "Retail Space",
+    location: "Solana Beach",
+    features: [
+      { name: "AC/Heating", status: "Included" },
+      { name: "Bathroom", status: "Included" },
+      { name: "Upgrades", status: "Allowed" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Suite 1D",
+    sqft: "1112",
+    price: "Price Available Upon Request",
+    images: [
+      "/images/solana-beach/suite1D/Suite1DPage2.jpg",
+      "/images/solana-beach/suite1D/Suite1DPage3.jpg",
+      // ...other images
+    ],
+    imageUrl: "/images/solana-beach/suite1D/Suite1DPage2.jpg",
+    type: "Office/Retail Space",
+    location: "Solana Beach",
+    features: [
+      { name: "AC/Heating", status: "Included" },
+      { name: "Bathroom", status: "Included" },
+      { name: "Separate Office", status: "Included" },
+      { name: "Upgraded", status: "Allowed" },
+      { name: "Laminate Floors", status: "Included" },
+    ],
+  },
+];
+
 import NavBar from "@/app/components/ui/navigation/NavBar";
 import {
   Card,
