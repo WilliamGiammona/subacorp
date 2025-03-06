@@ -122,7 +122,7 @@ export default function SolanaBeach() {
         { name: "Bathroom", status: "Included" },
         { name: "Separate Office", status: "Included" },
         { name: "Upgrades", status: "Allowed" },
-        { name: "Laminate Floors", status: "Included" },
+        { name: "Laminated Floors", status: "Included" },
       ],
     },
   ];
