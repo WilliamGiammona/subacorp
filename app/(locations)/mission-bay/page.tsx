@@ -203,10 +203,10 @@ export default function MissionBay() {
             4501 Mission Bay Dr., San Diego, CA 92109
           </p>
           <p className="mt-8  text-gray-600 dark:text-gray-300 text-sm md:text-base">
-            Mission Bay Professional Center is conveniently located in a high
-            traffic/high visibility location in the Mission Bay area of San
-            Diego. The building has easy access to Highways 5 and 52 as well as
-            ample parking for customers, and currently has award winning
+            Mission Bay Professional Center is conveniently located in a
+            high-traffic traffic, high visibility area in the Mission Bay area
+            of San Diego. The building has easy access to Highways 5 and 52 as
+            well as ample parking for customers, and currently has award winning
             restaurants, a convenience store, and many medical and professional
             tenants. It is near the Mission Bay Golf Course as well as the
             beach! The traffic count is approximately 31,360 ADT. The median
