@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/app/components/ui/themeprovider";
 import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "./footer/page";
 
 export const metadata: Metadata = {
   title: "SUBA",
@@ -29,6 +30,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <Footer />
           </ThemeProvider>
         </ClerkProvider>
       </body>
