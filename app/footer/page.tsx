@@ -5,7 +5,7 @@ const Footer = () => {
         <p>&copy; 2025 SUBA CORPORATION All rights reserved.</p>
         <p className="mt-2">
           <a
-            href="/legal/SUBA-TOU.pdf"
+            href="https://suba-corp-tou.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-gray-700 transition-colors"

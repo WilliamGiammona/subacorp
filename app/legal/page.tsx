@@ -46,7 +46,7 @@ const Legal = () => {
                 <div className="w-full max-w-4xl mx-auto">
                   <div className=" text-center">
                     <a
-                      href="/legal/SUBA-TOU.pdf"
+                      href="https://suba-corp-tou.netlify.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block px-6 py-3 bg-primary text-black dark:text-white rounded-md hover:opacity-50 text-3xl"
