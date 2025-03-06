@@ -63,8 +63,11 @@ export default function SolanaBeach() {
       title: "Suite 1C",
       sqft: "1,358",
       price: "Price Available Upon Request",
-      images: ["/images/solana-beach/suite1C/Suite1CPage1.jpg"],
-      imageUrl: "/images/solana-beach/suite1C/Suite1CPage1.jpg", // Keeping for backwards compatibility
+      images: [
+        "/images/solana-beach/suite1C/Suite1CPage1.jpg",
+        "/images/solana-beach/suite1C/Suite1CBathroomPage2.jpg",
+      ],
+      imageUrl: "/images/solana-beach/suite1C/Suite1CPage1.jpg",
       type: "Retail Space",
       location: "Solana Beach",
     },
