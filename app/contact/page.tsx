@@ -39,7 +39,7 @@ export default function Contact() {
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <Clock className="h-6 w-6 text-primary mr-3" />
-              <h2 className="text-xl font-semibold">Hours</h2>
+              <h2 className="text-xl font-semibold">Office Hours</h2>
             </div>
             <p className="text-muted-foreground">
               Mon, Wed, Fri: 9:00 AM - 5:00 PM
