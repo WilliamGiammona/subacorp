@@ -218,9 +218,8 @@ export default function SolanaBeach() {
             parking on adjacent streets. Besides the fantastic tenants and their
             offerings and services, it is located near other restaurants,
             shopping, world class beaches, The Del Mar Racetrack, The
-            Coaster/Amtrak station and many other great services. We have a
-            couple of new spaces coming up for lease over the next couple of
-            months.
+            Coaster/Amtrak station and many other great services. We have
+            several new spaces coming up for lease over the next few months.
             <br />
           </p>
         </div>

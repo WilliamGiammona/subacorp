@@ -212,9 +212,10 @@ export default function MissionBay() {
             beach! The traffic count is approximately 31,360 ADT. The median
             income is approximately $71,000 with the average home price being
             $982,000. The immediate surrounding population is 48,000 with a
-            density of 6,250 people per square mile. Nearby _blank_ include many
-            fine dining restaurants, retail stores, Mission Bay, Mission Bay
-            Golf Course, and of course the beach!
+            density of 6,250 people per square mile. Nearby points of interest
+            include many fine dining restaurants, retail stores, Mission Bay,
+            Mission Bay Golf Course, and of course the beach! We have several
+            new spaces coming up for lease over the next few months.
             <br />
           </p>
         </div>
