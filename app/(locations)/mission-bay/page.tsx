@@ -1,16 +1,16 @@
 "use client";
 
 import NavBar from "@/app/components/ui/navigation/NavBar";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../../components/ui/card";
+// import {
+//   Card,
+//   CardContent,
+//   CardFooter,
+//   CardHeader,
+//   CardTitle,
+// } from "../../components/ui/card";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { X, Download, MapPin, Building2, Grid2x2 } from "lucide-react";
+import { X, Download /* MapPin, Building2, Grid2x2 */ } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -27,7 +27,7 @@ export default function MissionBay() {
   const [selectedTenantIndex, setSelectedTenantIndex] = useState<number | null>(
     null
   );
-  const [api, setApi] = useState<CarouselApi>();
+  const [api, setApi] = useState<CarouselApi | undefined>(undefined);
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
@@ -68,6 +68,7 @@ export default function MissionBay() {
     a.click();
   };
 
+  // Keep these for future use when you have actual listings
   const listings = [
     {
       id: 1,
@@ -138,7 +139,7 @@ export default function MissionBay() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <NavBar />
 
-      {/* Modal */}
+      {/* Modal - you can comment this out if you won't need it until you have listings */}
       {(selectedListingIndex !== null || selectedTenantIndex !== null) && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur">
           <div className="relative max-w-4xl w-full h-[80vh]">
@@ -225,51 +226,16 @@ export default function MissionBay() {
         <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
           Available Listings
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {listings.map((listing, index) => (
-            <Card
-              key={listing.id}
-              className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer"
-              onClick={() => setSelectedListingIndex(index)}
-            >
-              <div
-                className="h-48 w-full rounded-t-lg"
-                style={{
-                  backgroundImage: `url(${listing.imageUrl})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              />
-              <CardHeader>
-                <CardTitle>{listing.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <div className="flex items-center text-muted-foreground">
-                    <MapPin className="h-4 w-4 mr-2" />
-                    {listing.location}
-                  </div>
-                  <div className="flex items-center text-muted-foreground">
-                    <Building2 className="h-4 w-4 mr-2" />
-                    {listing.type}
-                  </div>
-                  <div className="flex items-center text-muted-foreground">
-                    <Grid2x2 className="h-4 w-4 mr-2" />
-                    {listing.sqft} sq ft
-                  </div>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <p className="w-full text-center font-semibold">
-                  {listing.price}
-                </p>
-              </CardFooter>
-            </Card>
-          ))}
+        <div className="bg-white dark:bg-[#111827] rounded-lg shadow p-8 text-center">
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            No Available Listings at this time. Please check back soon or
+            contact us for more information.
+          </p>
         </div>
       </div>
 
-      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Tenants section commented out
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
           Current Tenants
         </h2>
