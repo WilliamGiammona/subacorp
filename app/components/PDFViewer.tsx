@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import NavBar from "@/app/components/ui/navigation/NavBar";
 import { Button } from "@/app/components/ui/button";
 import { ArrowLeft, Download, Loader2 } from "lucide-react";
 
-const PDFViewer = () => {
+// Separate component that uses useSearchParams
+function PDFViewerContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(true);
@@ -43,22 +44,17 @@ const PDFViewer = () => {
 
   if (!pdfPath) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-        <NavBar />
-        <main className="container mx-auto px-4 py-8 text-center">
-          <h1 className="text-2xl font-bold mb-4">
-            Error: No Document Specified
-          </h1>
-          <Button onClick={handleBack}>Go Back</Button>
-        </main>
+      <div className="container mx-auto px-4 py-8 text-center">
+        <h1 className="text-2xl font-bold mb-4">
+          Error: No Document Specified
+        </h1>
+        <Button onClick={handleBack}>Go Back</Button>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
-      <NavBar />
-
+    <>
       <div className="bg-white dark:bg-gray-800 shadow-sm py-4">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
@@ -98,6 +94,30 @@ const PDFViewer = () => {
           />
         </div>
       </main>
+    </>
+  );
+}
+
+// Loading fallback component
+function LoadingFallback() {
+  return (
+    <div className="flex items-center justify-center h-[calc(100vh-64px)]">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg flex items-center">
+        <Loader2 className="h-8 w-8 animate-spin mr-3 text-primary" />
+        <span className="text-lg">Loading viewer...</span>
+      </div>
+    </div>
+  );
+}
+
+// Main component with Suspense boundary
+const PDFViewer = () => {
+  return (
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
+      <NavBar />
+      <Suspense fallback={<LoadingFallback />}>
+        <PDFViewerContent />
+      </Suspense>
     </div>
   );
 };
