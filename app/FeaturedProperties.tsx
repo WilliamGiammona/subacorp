@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/app/components/ui/card";
-import { Building2, MapPin, Grid2x2, X, Download } from "lucide-react";
+import { Building2, MapPin, Grid2x2, X, Download, Loader2 } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -77,6 +77,9 @@ export default function FeaturedProperties() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const [imagesLoading, setImagesLoading] = useState<Record<number, boolean>>(
+    {}
+  );
 
   useEffect(() => {
     if (!api) return;
@@ -92,6 +95,27 @@ export default function FeaturedProperties() {
   const handlePropertyClick = (index: number) => {
     setSelectedIndex(index);
     setSelectedImages(solanaBeachListings[index].images);
+
+    // Initialize all images as loading
+    const initialLoadingState: Record<number, boolean> = {};
+    solanaBeachListings[index].images.forEach((_, imgIndex) => {
+      initialLoadingState[imgIndex] = true;
+    });
+    setImagesLoading(initialLoadingState);
+  };
+
+  const handleImageLoad = (index: number) => {
+    setImagesLoading((prev) => ({
+      ...prev,
+      [index]: false,
+    }));
+  };
+
+  const handleImageError = (index: number) => {
+    setImagesLoading((prev) => ({
+      ...prev,
+      [index]: false,
+    }));
   };
 
   const handleDownload = async () => {
@@ -104,9 +128,12 @@ export default function FeaturedProperties() {
     const property = solanaBeachListings[selectedIndex];
     const fileName = `${property.title}-image-${current}`;
 
+    // Get correct file extension from the URL
+    const extension = imageUrl.split(".").pop() || "jpg";
+
     const a = document.createElement("a");
     a.href = imageUrl;
-    a.download = `${fileName}.jpg`;
+    a.download = `${fileName}.${extension}`;
     a.click();
   };
 
@@ -138,12 +165,19 @@ export default function FeaturedProperties() {
               <CarouselContent>
                 {selectedImages.map((imageUrl, index) => (
                   <CarouselItem key={index} className="h-[80vh]">
-                    <div className="relative w-full h-full">
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      {imagesLoading[index] && (
+                        <div className="absolute inset-0 flex items-center justify-center z-10">
+                          <Loader2 className="h-12 w-12 text-white animate-spin" />
+                        </div>
+                      )}
                       <Image
                         src={imageUrl}
                         alt={`Property view ${index + 1}`}
                         fill
                         className="rounded-lg object-contain"
+                        onLoad={() => handleImageLoad(index)}
+                        onError={() => handleImageError(index)}
                       />
                     </div>
                   </CarouselItem>
