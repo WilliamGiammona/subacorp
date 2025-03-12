@@ -14,23 +14,22 @@ export default function Services() {
       description:
         "Comprehensive property maintenance and operations management",
       icon: Building2,
-      highlights: [
-        "Preventive Maintenance",
-        "Safety Compliance",
-        "Vendor Management",
-      ],
+      // highlights: [
+      //   "Preventive Maintenance",
+      //   "Safety Compliance",
+      //   "Vendor Management",
+      // ],
     },
 
     {
       title: "Leasing Services",
-      description:
-        "Full-service leasing solutions for both property owners and prospective tenants",
+      description: "Full-service leasing solutions for tenants",
       icon: Key,
-      highlights: [
-        "Preventive Maintenance",
-        "Safety Compliance",
-        "Vendor Management",
-      ],
+      // highlights: [
+      //   "Preventive Maintenance",
+      //   "Safety Compliance",
+      //   "Vendor Management",
+      // ],
     },
 
     {
@@ -38,7 +37,7 @@ export default function Services() {
       description:
         "Dedicated support ensuring tenant satisfaction and retention",
       icon: Users2,
-      highlights: ["Tenant Support", "Lease Administration", "Communication"],
+      // highlights: ["Tenant Support", "Lease Administration", "Communication"],
     },
   ];
 
@@ -72,7 +71,7 @@ export default function Services() {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {service.highlights.map((highlight) => (
+                    {/* {service.highlights.map((highlight) => (
                       <li
                         key={highlight}
                         className="flex items-center text-sm text-muted-foreground"
@@ -80,7 +79,7 @@ export default function Services() {
                         <div className="w-1 h-1 rounded-full bg-primary mr-2" />
                         {highlight}
                       </li>
-                    ))}
+                    ))} */}
                   </ul>
                 </CardContent>
               </Card>
