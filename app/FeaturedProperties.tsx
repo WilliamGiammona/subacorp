@@ -302,7 +302,7 @@ export default function FeaturedProperties() {
               <span className="text-sm sm:text-base">
                 View All Properties
                 <br />
-                in Mission Bay
+                in Pacific Beach
               </span>
             </Button>
           </Link>
