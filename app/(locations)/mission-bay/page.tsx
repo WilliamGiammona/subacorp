@@ -140,37 +140,32 @@ export default function MissionBay() {
       id: 1,
       name: "Sushi Ota",
       website: "www.sushi-ota.com",
-      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+      imageUrl: "/images/mission-bay/current-tenants/SushiOta.jpg", // Replace with actual tenant logo/image
     },
     {
       id: 2,
       name: "Ocean Physical Therapy",
       website: "www.oceanpt.net",
-      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+      imageUrl: "/images/mission-bay/current-tenants/OceanPt.jpg", // Replace with actual tenant logo/image
     },
     {
       id: 3,
       name: "Smiling Buddha Bodywork",
       website: "www.smilingbuddhabodywork.com",
-      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+      imageUrl: "/images/mission-bay/current-tenants/SmilingBuddha.jpg", // Replace with actual tenant logo/image
     },
+
     {
       id: 4,
-      name: "Spa Bliss by Chris Arbuckle",
-      website: "www.spablissbychris.com",
-      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+      name: "The Notary San Diego by Chris Arbuckle",
+      website: "www.thenotarysandiego.com",
+      imageUrl: "/images/mission-bay/current-tenants/Notary.jpg", // Replace with actual tenant logo/image
     },
     {
       id: 5,
-      name: "The Notary San Diego by Chris Arbuckle",
-      website: "www.thenotarysandiego.com",
-      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
-    },
-    {
-      id: 6,
       name: "Shawn Gartner Insurance Agent",
       website: "www.goosehead.com/agents/ca/san-diego/shawn-gartner",
-      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+      imageUrl: "/images/mission-bay/current-tenants/ShawnGartnerInsurance.jpg", // Replace with actual tenant logo/image
     },
   ];
 
