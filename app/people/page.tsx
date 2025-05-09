@@ -2,33 +2,14 @@
 
 import React from "react";
 import NavBar from "@/app/components/ui/navigation/NavBar";
-import Image from "next/image";
 
-const PersonCard = ({
-  name,
-  title,
-  imageSrc = "/api/placeholder/400/400",
-}: {
-  name: string;
-  title: string;
-  imageSrc?: string;
-}) => {
+const PersonCard = ({ name, title }: { name: string; title: string }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
-      <div className="aspect-square relative">
-        <Image
-          src={imageSrc}
-          alt={`${name}, ${title}`}
-          fill
-          className="object-cover"
-        />
-      </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-          {name}
-        </h3>
-        <p className="text-muted-foreground">{title}</p>
-      </div>
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 p-6">
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+        {name}
+      </h3>
+      <p className="text-muted-foreground">{title}</p>
     </div>
   );
 };
@@ -38,22 +19,18 @@ export default function People() {
     {
       name: "Barbara Giammona",
       title: "President and Chief Executive Officer",
-      imageSrc: "/images/Interior.jpg",
     },
     {
       name: "Joseph Giammona",
       title: "Vice-President and Chief Legal Officer",
-      imageSrc: "/images/Interior.jpg",
     },
     {
       name: "Christina Orsatti",
       title: "Property Manager",
-      imageSrc: "/images/Interior.jpg",
     },
     {
       name: "Patti Orsatti",
       title: "Executive Assistant",
-      imageSrc: "/images/Interior.jpg",
     },
   ];
 
@@ -77,7 +54,6 @@ export default function People() {
               key={person.name}
               name={person.name}
               title={person.title}
-              imageSrc={person.imageSrc}
             />
           ))}
         </div>
