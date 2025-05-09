@@ -54,6 +54,9 @@ export default function NavBar() {
             <Link href="/about" className="hover:text-gray-600 text-lg">
               About
             </Link>
+            <Link href="/people" className="hover:text-gray-600 text-lg">
+              People
+            </Link>
             <Link href="/legal" className="hover:text-gray-600 text-lg">
               Legal
             </Link>
@@ -111,6 +114,12 @@ export default function NavBar() {
               className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
             >
               About
+            </Link>
+            <Link
+              href="/people"
+              className="block hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-md"
+            >
+              People
             </Link>
             <Link
               href="/legal"
