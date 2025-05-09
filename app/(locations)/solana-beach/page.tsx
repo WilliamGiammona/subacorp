@@ -87,6 +87,39 @@ export default function SolanaBeach() {
     },
   ];
 
+  const featuredTenants = [
+    {
+      id: 1,
+      name: "Architects Orange",
+      website: "www.aoarchitects.com",
+      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+    },
+    {
+      id: 2,
+      name: "Solana Flooring",
+      website: "www.solanaflooring.com",
+      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+    },
+    {
+      id: 3,
+      name: "The Enchanted Treehouse",
+      website: "www.theenchantedtreehouse.org",
+      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+    },
+    {
+      id: 4,
+      name: "San Diego Rejuvenation",
+      website: "www.sdrejuv.com",
+      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+    },
+    {
+      id: 5,
+      name: "Marisa McBride Financial Planner",
+      website: "www.marisamcbrideea.com",
+      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+    },
+  ];
+
   const [selectedListingIndex, setSelectedListingIndex] = useState<
     number | null
   >(null);
@@ -316,6 +349,42 @@ export default function SolanaBeach() {
                   {listing.price}
                 </p>
               </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+          Featured Tenants
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredTenants.map((tenant) => (
+            <Card
+              key={tenant.id}
+              className="hover:shadow-lg transition-all hover:-translate-y-2 overflow-hidden"
+            >
+              <div
+                className="h-48 w-full"
+                style={{
+                  backgroundImage: `url(${tenant.imageUrl})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <CardHeader>
+                <CardTitle>{tenant.name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <a
+                  href={`https://${tenant.website}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {tenant.website}
+                </a>
+              </CardContent>
             </Card>
           ))}
         </div>

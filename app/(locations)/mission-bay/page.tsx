@@ -135,6 +135,45 @@ export default function MissionBay() {
     },
   ];
 
+  const featuredTenants = [
+    {
+      id: 1,
+      name: "Sushi Ota",
+      website: "www.sushi-ota.com",
+      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+    },
+    {
+      id: 2,
+      name: "Ocean Physical Therapy",
+      website: "www.oceanpt.net",
+      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+    },
+    {
+      id: 3,
+      name: "Smiling Buddha Bodywork",
+      website: "www.smilingbuddhabodywork.com",
+      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+    },
+    {
+      id: 4,
+      name: "Spa Bliss by Chris Arbuckle",
+      website: "www.spablissbychris.com",
+      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+    },
+    {
+      id: 5,
+      name: "The Notary San Diego by Chris Arbuckle",
+      website: "www.thenotarysandiego.com",
+      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+    },
+    {
+      id: 6,
+      name: "Shawn Gartner Insurance Agent",
+      website: "www.goosehead.com/agents/ca/san-diego/shawn-gartner",
+      imageUrl: "/images/Interior.jpg", // Replace with actual tenant logo/image
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <NavBar />
@@ -231,6 +270,42 @@ export default function MissionBay() {
             No Available Listings at this time. Please check back soon or
             contact us for more information.
           </p>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+          Featured Tenants
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredTenants.map((tenant) => (
+            <div
+              key={tenant.id}
+              className="bg-white dark:bg-[#111827] rounded-lg shadow overflow-hidden hover:shadow-lg transition-all hover:-translate-y-2"
+            >
+              <div
+                className="h-48 w-full"
+                style={{
+                  backgroundImage: `url(${tenant.imageUrl})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                  {tenant.name}
+                </h3>
+                <a
+                  href={`https://${tenant.website}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {tenant.website}
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
