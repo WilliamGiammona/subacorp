@@ -281,7 +281,7 @@ export default function MissionBay() {
               <div
                 className="h-48 w-full"
                 style={{
-                  backgroundImage: `url(${tenant.imageUrl})`,
+                  // backgroundImage: `url(${tenant.imageUrl})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}

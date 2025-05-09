@@ -70,32 +70,31 @@ export default function SolanaBeach() {
       id: 1,
       name: "Architects Orange",
       website: "www.aoarchitects.com",
-      imageUrl: "/images/solana-beach/current-tenants/aoarchitects.jpg", // Replace with actual tenant logo/image
+      // imageUrl: "/images/solana-beach/current-tenants/aoarchitects.jpg",
     },
     {
       id: 2,
       name: "Solana Flooring",
       website: "www.solanaflooring.com",
-      imageUrl: "/images/solana-beach/current-tenants/SolanaFlooring.jpg", // Replace with actual tenant logo/image
+      // imageUrl: "/images/solana-beach/current-tenants/SolanaFlooring.jpg",
     },
     {
       id: 3,
       name: "The Enchanted Treehouse",
       website: "www.theenchantedtreehouse.org",
-      imageUrl: "/images/solana-beach/current-tenants/enchantedtreehouse.jpg", // Replace with actual tenant logo/image
+      // imageUrl: "/images/solana-beach/current-tenants/enchantedtreehouse.jpg",
     },
     {
       id: 4,
       name: "San Diego Rejuvenation",
       website: "www.sdrejuv.com",
-      imageUrl: "/images/solana-beach/current-tenants/SDRejuvination.jpg", // Replace with actual tenant logo/image
+      // imageUrl: "/images/solana-beach/current-tenants/SDRejuvination.jpg",
     },
     {
       id: 5,
       name: "Marisa McBride Financial Planner",
       website: "www.marisamcbrideea.com",
-      imageUrl:
-        "/images/solana-beach/current-tenants/MarisaMcbrideFinancialPlanner.jpg", // Replace with actual tenant logo/image
+      // imageUrl: "/images/solana-beach/current-tenants/MarisaMcbrideFinancialPlanner.jpg",
     },
   ];
 
@@ -346,7 +345,7 @@ export default function SolanaBeach() {
               <div
                 className="h-48 w-full"
                 style={{
-                  backgroundImage: `url(${tenant.imageUrl})`,
+                  // backgroundImage: `url(${tenant.imageUrl})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
