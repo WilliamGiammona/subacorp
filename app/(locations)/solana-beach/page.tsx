@@ -41,28 +41,6 @@ export default function SolanaBeach() {
   const listings: Listing[] = [
     {
       id: 1,
-      title: "Suite 1C",
-      sqft: "1,358",
-      price: "Price Available Upon Request",
-      images: [
-        "/images/solana-beach/suite1C/Suite1CPage1.jpg",
-        "/images/solana-beach/suite1C/Suite1CPage3.jpg",
-        "/images/solana-beach/suite1C/Suite1CPage4.jpg",
-        "/images/solana-beach/suite1C/Suite1CPage5.jpg",
-        "/images/solana-beach/suite1C/Suite1CPage6.jpg",
-        "/images/solana-beach/suite1C/Suite1CFloorPlanPage7.png",
-      ],
-      imageUrl: "/images/solana-beach/suite1C/Suite1CPage1.jpg",
-      type: "Retail Space",
-      location: "Solana Beach",
-      features: [
-        { name: "AC/Heating", status: "Included" },
-        { name: "Bathroom", status: "Included" },
-        { name: "Upgrades", status: "Allowed" },
-      ],
-    },
-    {
-      id: 2,
       title: "Suite 1D",
       sqft: "1112",
       price: "Price Available Upon Request",
