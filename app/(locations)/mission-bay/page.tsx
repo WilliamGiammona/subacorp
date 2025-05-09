@@ -303,39 +303,6 @@ export default function MissionBay() {
           ))}
         </div>
       </div>
-
-      {/* Tenants section commented out
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-          Current Tenants
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tenants.map((tenant, index) => (
-            <Card
-              key={tenant.id}
-              className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer"
-              onClick={() => setSelectedTenantIndex(index)}
-            >
-              <div className="relative h-48 w-full">
-                <Image
-                  src={tenant.imageUrl}
-                  alt={tenant.name}
-                  fill
-                  className="object-cover rounded-t-lg"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-lg">{tenant.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Tenant since {tenant.since}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div> */}
     </div>
   );
 }
