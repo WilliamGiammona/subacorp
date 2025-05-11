@@ -1,16 +1,9 @@
 "use client";
 
 import NavBar from "@/app/components/ui/navigation/NavBar";
-// import {
-//   Card,
-//   CardContent,
-//   CardFooter,
-//   CardHeader,
-//   CardTitle,
-// } from "../../components/ui/card";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { X, Download /* MapPin, Building2, Grid2x2 */ } from "lucide-react";
+import { X, Download, MapPin, Building2, Grid2x2, Loader2 } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -24,12 +17,12 @@ export default function MissionBay() {
   const [selectedListingIndex, setSelectedListingIndex] = useState<
     number | null
   >(null);
-  const [selectedTenantIndex, setSelectedTenantIndex] = useState<number | null>(
-    null
-  );
   const [api, setApi] = useState<CarouselApi | undefined>(undefined);
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const [imagesLoading, setImagesLoading] = useState<Record<number, boolean>>(
+    {}
+  );
 
   useEffect(() => {
     if (!api) return;
@@ -47,91 +40,75 @@ export default function MissionBay() {
 
     if (selectedListingIndex !== null) {
       api.scrollTo(selectedListingIndex);
-    } else if (selectedTenantIndex !== null) {
-      api.scrollTo(selectedTenantIndex);
     }
-  }, [api, selectedListingIndex, selectedTenantIndex]);
+  }, [api, selectedListingIndex]);
+
+  const handleListingClick = (index: number) => {
+    setSelectedListingIndex(index);
+
+    // Initialize all images as loading
+    const initialLoadingState: Record<number, boolean> = {};
+    listings[index].images.forEach((_, imgIndex) => {
+      initialLoadingState[imgIndex] = true;
+    });
+    setImagesLoading(initialLoadingState);
+  };
+
+  const handleImageLoad = (index: number) => {
+    setImagesLoading((prev) => ({
+      ...prev,
+      [index]: false,
+    }));
+  };
+
+  const handleImageError = (index: number) => {
+    setImagesLoading((prev) => ({
+      ...prev,
+      [index]: false,
+    }));
+  };
 
   const handleDownload = async () => {
-    const currentItem =
-      selectedListingIndex !== null
-        ? listings[current - 1]
-        : tenants[current - 1];
+    if (selectedListingIndex === null) return;
 
-    const fileName =
-      "listing" +
-      ("title" in currentItem ? currentItem.title : currentItem.name);
+    const imageIndex = current - 1;
+    const listing = listings[selectedListingIndex];
+
+    if (imageIndex < 0 || imageIndex >= listing.images.length) return;
+
+    const imageUrl = listing.images[imageIndex];
+    const fileName = `${listing.title}-image-${current}`;
+
+    // Get correct file extension from the URL
+    const extension = imageUrl.split(".").pop() || "jpg";
 
     const a = document.createElement("a");
-    a.href = currentItem.imageUrl;
-    a.download = `${fileName}.jpg`;
+    a.href = imageUrl;
+    a.download = `${fileName}.${extension}`;
     a.click();
   };
 
-  // Keep these for future use when you have actual listings
+  // Available listings
   const listings = [
     {
       id: 1,
-      title: "Suite 101",
-      sqft: "1,200",
+      title: "Suite 1P",
+      sqft: "1,050",
       price: "Price Available Upon Request",
-      imageUrl: "/images/Interior.jpg",
-      type: "Office Space",
+      images: [
+        "/images/mission-bay/suite1P/Exterior1P.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage1.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage2.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage3.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage4.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage5.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage6.jpg",
+        "/images/mission-bay/suite1P/FloorPlan1P.jpg",
+      ],
+      imageUrl: "/images/mission-bay/suite1P/Exterior1P.jpg",
+      type: "Office/Retail Space",
       location: "Mission Bay",
-    },
-    {
-      id: 2,
-      title: "Suite 102",
-      sqft: "950",
-      price: "Price Available Upon Request",
-      imageUrl: "/images/Interior.jpg",
-      type: "Office Space",
-      location: "Mission Bay",
-    },
-    {
-      id: 3,
-      title: "Suite 201",
-      sqft: "1,500",
-      price: "Price Available Upon Request",
-      imageUrl: "/images/Interior.jpg",
-      type: "Office Space",
-      location: "Mission Bay",
-    },
-    {
-      id: 4,
-      title: "Suite 202",
-      sqft: "800",
-      price: "Price Available Upon Request",
-      imageUrl: "/images/Interior.jpg",
-      type: "Office Space",
-      location: "Mission Bay",
-    },
-  ];
-
-  const tenants = [
-    {
-      id: 1,
-      name: "Sushi Ota",
-      since: "2015",
-      imageUrl: "/images/Interior.jpg",
-    },
-    {
-      id: 2,
-      name: "Lanna Thai",
-      since: "2018",
-      imageUrl: "/images/Interior.jpg",
-    },
-    {
-      id: 3,
-      name: "7 Eleven",
-      since: "2019",
-      imageUrl: "/images/Interior.jpg",
-    },
-    {
-      id: 4,
-      name: "Cloud Dry Cleaning",
-      since: "2020",
-      imageUrl: "/images/Interior.jpg",
+      features: [{ name: "Corner Location", status: "Yes" }],
     },
   ];
 
@@ -154,7 +131,6 @@ export default function MissionBay() {
       website: "www.smilingbuddhabodywork.com",
       imageUrl: "/images/mission-bay/current-tenants/SmilingBuddha.jpg", // Replace with actual tenant logo/image
     },
-
     {
       id: 4,
       name: "The Notary San Diego by Chris Arbuckle",
@@ -173,8 +149,8 @@ export default function MissionBay() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <NavBar />
 
-      {/* Modal - you can comment this out if you won't need it until you have listings */}
-      {(selectedListingIndex !== null || selectedTenantIndex !== null) && (
+      {/* Modal */}
+      {selectedListingIndex !== null && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur">
           <div className="relative max-w-4xl w-full h-[80vh]">
             <div className="absolute top-0 right-0 z-[60] flex items-center gap-4 text-white">
@@ -184,7 +160,6 @@ export default function MissionBay() {
               <button
                 onClick={() => {
                   setSelectedListingIndex(null);
-                  setSelectedTenantIndex(null);
                 }}
                 className="hover:text-gray-300"
               >
@@ -198,20 +173,28 @@ export default function MissionBay() {
               opts={{ loop: true }}
             >
               <CarouselContent>
-                {(selectedListingIndex !== null ? listings : tenants).map(
-                  (item) => (
-                    <CarouselItem key={item.id} className="h-[80vh]">
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={item.imageUrl}
-                          alt="Property view"
-                          fill
-                          className="rounded-lg object-contain"
-                        />
-                      </div>
-                    </CarouselItem>
-                  )
-                )}
+                {selectedListingIndex !== null &&
+                  listings[selectedListingIndex].images.map(
+                    (imageUrl, index) => (
+                      <CarouselItem key={index} className="h-[80vh]">
+                        <div className="relative w-full h-full flex items-center justify-center">
+                          {imagesLoading[index] && (
+                            <div className="absolute inset-0 flex items-center justify-center z-10">
+                              <Loader2 className="h-12 w-12 text-white animate-spin" />
+                            </div>
+                          )}
+                          <Image
+                            src={imageUrl}
+                            alt={`Property view ${index + 1}`}
+                            fill
+                            className="rounded-lg object-contain"
+                            onLoad={() => handleImageLoad(index)}
+                            onError={() => handleImageError(index)}
+                          />
+                        </div>
+                      </CarouselItem>
+                    )
+                  )}
               </CarouselContent>
               <CarouselPrevious className="left-4" />
               <CarouselNext className="right-4" />
@@ -237,7 +220,7 @@ export default function MissionBay() {
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-300">
             4501 Mission Bay Dr., San Diego, CA 92109
           </p>
-          <p className="mt-8  text-gray-600 dark:text-gray-300 text-sm md:text-base">
+          <p className="mt-8 text-gray-600 dark:text-gray-300 text-sm md:text-base">
             Mission Bay Professional Center is conveniently located in a
             high-traffic traffic, high visibility area in the Pacific Beach area
             of San Diego. The building has easy access to Highways 5 and 52 as
@@ -260,11 +243,67 @@ export default function MissionBay() {
         <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
           Available Listings
         </h2>
-        <div className="bg-white dark:bg-[#111827] rounded-lg shadow p-8 text-center">
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            No Available Listings at this time. Please check back soon or
-            contact us for more information.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {listings.map((listing, index) => (
+            <div
+              key={listing.id}
+              className="bg-white dark:bg-[#111827] rounded-lg shadow overflow-hidden hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer flex flex-col"
+              onClick={() => handleListingClick(index)}
+            >
+              <div
+                className="h-48 w-full"
+                style={{
+                  backgroundImage: `url(${listing.imageUrl})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                  {listing.title}
+                </h3>
+                <div className="space-y-2">
+                  <div className="flex items-center text-gray-600 dark:text-gray-300">
+                    <MapPin className="h-4 w-4 mr-2" />
+                    {listing.location}
+                  </div>
+                  <div className="flex items-center text-gray-600 dark:text-gray-300">
+                    <Building2 className="h-4 w-4 mr-2" />
+                    {listing.type}
+                  </div>
+                  <div className="flex items-center text-gray-600 dark:text-gray-300">
+                    <Grid2x2 className="h-4 w-4 mr-2" />
+                    {listing.sqft} sq ft
+                  </div>
+
+                  {/* Features section */}
+                  {listing.features && listing.features.length > 0 && (
+                    <div className="mt-3 pt-2 border-t">
+                      <h4 className="font-medium text-sm mb-1">Features:</h4>
+                      <ul className="space-y-1">
+                        {listing.features.map((feature, idx) => (
+                          <li
+                            key={idx}
+                            className="text-sm flex justify-between"
+                          >
+                            <span>{feature.name}</span>
+                            <span className="font-medium">
+                              {feature.status}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="border-t p-4 mt-auto">
+                <p className="w-full text-center font-semibold">
+                  {listing.price}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -276,29 +315,19 @@ export default function MissionBay() {
           {featuredTenants.map((tenant) => (
             <div
               key={tenant.id}
-              className="bg-white dark:bg-[#111827] rounded-lg shadow overflow-hidden hover:shadow-lg transition-all hover:-translate-y-2"
+              className="bg-white dark:bg-[#111827] rounded-lg shadow p-6 hover:shadow-lg transition-all hover:-translate-y-2"
             >
-              <div
-                className="h-48 w-full"
-                style={{
-                  // backgroundImage: `url(${tenant.imageUrl})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-                  {tenant.name}
-                </h3>
-                <a
-                  href={`https://${tenant.website}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  {tenant.website}
-                </a>
-              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                {tenant.name}
+              </h3>
+              <a
+                href={`https://${tenant.website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                {tenant.website}
+              </a>
             </div>
           ))}
         </div>

@@ -338,32 +338,22 @@ export default function SolanaBeach() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredTenants.map((tenant) => (
-            <Card
+            <div
               key={tenant.id}
-              className="hover:shadow-lg transition-all hover:-translate-y-2 overflow-hidden"
+              className="bg-white dark:bg-[#111827] rounded-lg shadow p-6 hover:shadow-lg transition-all hover:-translate-y-2"
             >
-              <div
-                className="h-48 w-full"
-                style={{
-                  // backgroundImage: `url(${tenant.imageUrl})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              />
-              <CardHeader>
-                <CardTitle>{tenant.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <a
-                  href={`https://${tenant.website}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  {tenant.website}
-                </a>
-              </CardContent>
-            </Card>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                {tenant.name}
+              </h3>
+              <a
+                href={`https://${tenant.website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                {tenant.website}
+              </a>
+            </div>
           ))}
         </div>
       </div>
