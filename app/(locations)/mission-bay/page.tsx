@@ -146,31 +146,31 @@ export default function MissionBay() {
       id: 1,
       name: "Sushi Ota",
       website: "www.sushi-ota.com",
-      imageUrl: "/images/mission-bay/current-tenants/SushiOta.jpg", // Replace with actual tenant logo/image
+      imageUrl: "/images/mission-bay/current-tenants/SushiOta.jpg",
     },
     {
       id: 2,
       name: "Ocean Physical Therapy",
       website: "www.oceanpt.net",
-      imageUrl: "/images/mission-bay/current-tenants/OceanPt.jpg", // Replace with actual tenant logo/image
+      imageUrl: "/images/mission-bay/current-tenants/OceanPt.jpg",
     },
     {
       id: 3,
       name: "Smiling Buddha Bodywork",
       website: "www.smilingbuddhabodywork.com",
-      imageUrl: "/images/mission-bay/current-tenants/SmilingBuddha.jpg", // Replace with actual tenant logo/image
+      imageUrl: "/images/mission-bay/current-tenants/SmilingBuddha.jpg",
     },
     {
       id: 4,
       name: "The Notary San Diego by Chris Arbuckle",
       website: "www.thenotarysandiego.com",
-      imageUrl: "/images/mission-bay/current-tenants/Notary.jpg", // Replace with actual tenant logo/image
+      imageUrl: "/images/mission-bay/current-tenants/Notary.jpg",
     },
     {
       id: 5,
       name: "Shawn Gartner Insurance Agent",
       website: "www.goosehead.com/agents/ca/san-diego/shawn-gartner",
-      imageUrl: "/images/mission-bay/current-tenants/ShawnGartnerInsurance.jpg", // Replace with actual tenant logo/image
+      imageUrl: "/images/mission-bay/current-tenants/ShawnGartnerInsurance.jpg",
     },
   ];
 
