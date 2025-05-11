@@ -145,6 +145,26 @@ export default function MissionBay() {
         { name: "Break room", status: "Included" },
       ],
     },
+    {
+      id: 3,
+      title: "Suite 1L",
+      sqft: "795",
+      price: "Price Available Upon Request",
+      images: [
+        "/images/mission-bay/suite1L/Exterior1L.jpg",
+        "/images/mission-bay/suite1L/Suite1LPage2.jpg",
+        "/images/mission-bay/suite1L/Suite1LPage3.jpg",
+        "/images/mission-bay/suite1L/Suite1LPage4.jpg",
+        "/images/mission-bay/suite1L/Suite1LPage5.jpg",
+      ],
+      imageUrl: "/images/mission-bay/suite1L/Exterior1L.jpg",
+      type: "Office Space",
+      location: "Mission Bay",
+      features: [
+        { name: "Spacious Offices", status: "Included" },
+        { name: "Waiting Area", status: "Included" },
+      ],
+    },
   ];
 
   const featuredTenants = [
