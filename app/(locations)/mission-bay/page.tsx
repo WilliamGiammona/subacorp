@@ -38,9 +38,7 @@ export default function MissionBay() {
   useEffect(() => {
     if (!api) return;
 
-    if (selectedListingIndex !== null) {
-      api.scrollTo(selectedListingIndex);
-    }
+    api.scrollTo(0);
   }, [api, selectedListingIndex]);
 
   const handleListingClick = (index: number) => {
