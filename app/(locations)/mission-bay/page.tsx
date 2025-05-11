@@ -89,14 +89,14 @@ export default function MissionBay() {
   };
 
   // Available listings
+  // Available listings
   const listings = [
     {
       id: 1,
       title: "Suite 1P",
-      sqft: "1,050",
+      sqft: "1,350",
       price: "Price Available Upon Request",
       images: [
-        "/images/mission-bay/suite1P/Exterior1P.jpg",
         "/images/mission-bay/suite1P/Suite1Ppage1.jpg",
         "/images/mission-bay/suite1P/Suite1Ppage2.jpg",
         "/images/mission-bay/suite1P/Suite1Ppage3.jpg",
@@ -104,11 +104,40 @@ export default function MissionBay() {
         "/images/mission-bay/suite1P/Suite1Ppage5.jpg",
         "/images/mission-bay/suite1P/Suite1Ppage6.jpg",
         "/images/mission-bay/suite1P/FloorPlan1P.jpg",
+        "/images/mission-bay/suite1P/Exterior1P.jpg",
       ],
-      imageUrl: "/images/mission-bay/suite1P/Exterior1P.jpg",
+      imageUrl: "/images/mission-bay/suite1P/Suite1Ppage1.jpg",
       type: "Office/Retail Space",
       location: "Mission Bay",
-      features: [{ name: "Corner Location", status: "Yes" }],
+      features: [
+        { name: "AC/Heating", status: "Included" },
+        { name: "Bathroom", status: "Included" },
+        { name: "Corner Location", status: "Yes" },
+        { name: "Upgrades", status: "Allowed" },
+      ],
+    },
+    {
+      id: 2,
+      title: "Suite 1C",
+      sqft: "1,200",
+      price: "Price Available Upon Request",
+      images: [
+        "/images/mission-bay/suite1CDE/PageOneSuite1CDE.jpg",
+        "/images/mission-bay/suite1CDE/PageTwoSuite1CDE.jpg",
+        "/images/mission-bay/suite1CDE/PageThreeSuite1CDE.jpg",
+        "/images/mission-bay/suite1CDE/PageFourSuite1CDE.jpg",
+        "/images/mission-bay/suite1CDE/PageFiveSuite1CDE.jpg",
+        "/images/mission-bay/suite1CDE/PageSixSuite1CDE.jpg",
+      ],
+      imageUrl: "/images/mission-bay/suite1CDE/PageOneSuite1CDE.jpg",
+      type: "Office Space",
+      location: "Mission Bay",
+      features: [
+        { name: "AC/Heating", status: "Included" },
+        { name: "Bathroom", status: "Included" },
+        { name: "Large Windows", status: "Yes" },
+        { name: "Upgrades", status: "Allowed" },
+      ],
     },
   ];
 
