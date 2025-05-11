@@ -22,7 +22,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 // Define the listings data directly in this file
-const solanaBeachListings = [
+const featuredListings = [
   {
     id: 1,
     title: "Suite 1D",
@@ -45,6 +45,51 @@ const solanaBeachListings = [
       { name: "Separate Office", status: "Included" },
       { name: "Laminate Floors", status: "Included" },
       { name: "Upgrades", status: "Allowed" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Suite 1P",
+    sqft: "1,350",
+    price: "Price Available Upon Request",
+    images: [
+      "/images/mission-bay/suite1P/Suite1Ppage1.jpg",
+      "/images/mission-bay/suite1P/Suite1Ppage2.jpg",
+      "/images/mission-bay/suite1P/Suite1Ppage3.jpg",
+      "/images/mission-bay/suite1P/Suite1Ppage4.jpg",
+      "/images/mission-bay/suite1P/Suite1Ppage5.jpg",
+      "/images/mission-bay/suite1P/Suite1Ppage6.jpg",
+      "/images/mission-bay/suite1P/FloorPlan1P.jpg",
+      "/images/mission-bay/suite1P/Exterior1P.jpg",
+    ],
+    imageUrl: "/images/mission-bay/suite1P/Suite1Ppage1.jpg",
+    type: "Office/Retail Space",
+    location: "Mission Bay",
+    features: [
+      { name: "AC/Heating", status: "Included" },
+      { name: "Bathroom", status: "Included" },
+      { name: "Corner Location", status: "Yes" },
+      { name: "Upgrades", status: "Allowed" },
+    ],
+  },
+  {
+    id: 3,
+    title: "Suite 1L",
+    sqft: "795",
+    price: "Price Available Upon Request",
+    images: [
+      "/images/mission-bay/suite1L/Exterior1L.jpg",
+      "/images/mission-bay/suite1L/Suite1LPage2.jpg",
+      "/images/mission-bay/suite1L/Suite1LPage3.jpg",
+      "/images/mission-bay/suite1L/Suite1LPage4.jpg",
+      "/images/mission-bay/suite1L/Suite1LPage5.jpg",
+    ],
+    imageUrl: "/images/mission-bay/suite1L/Exterior1L.jpg",
+    type: "Office Space",
+    location: "Mission Bay",
+    features: [
+      { name: "Spacious Offices", status: "Included" },
+      { name: "Waiting Area", status: "Included" },
     ],
   },
 ];
@@ -72,11 +117,11 @@ export default function FeaturedProperties() {
 
   const handlePropertyClick = (index: number) => {
     setSelectedIndex(index);
-    setSelectedImages(solanaBeachListings[index].images);
+    setSelectedImages(featuredListings[index].images);
 
     // Initialize all images as loading
     const initialLoadingState: Record<number, boolean> = {};
-    solanaBeachListings[index].images.forEach((_, imgIndex) => {
+    featuredListings[index].images.forEach((_, imgIndex) => {
       initialLoadingState[imgIndex] = true;
     });
     setImagesLoading(initialLoadingState);
@@ -103,7 +148,7 @@ export default function FeaturedProperties() {
     if (imageIndex < 0 || imageIndex >= selectedImages.length) return;
 
     const imageUrl = selectedImages[imageIndex];
-    const property = solanaBeachListings[selectedIndex];
+    const property = featuredListings[selectedIndex];
     const fileName = `${property.title}-image-${current}`;
 
     // Get correct file extension from the URL
@@ -193,7 +238,7 @@ export default function FeaturedProperties() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-          {solanaBeachListings.map((property, index) => (
+          {featuredListings.map((property, index) => (
             <Card
               key={property.id}
               className="hover:shadow-lg transition-all hover:-translate-y-2 cursor-pointer flex flex-col"
