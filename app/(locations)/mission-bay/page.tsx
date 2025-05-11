@@ -117,7 +117,7 @@ export default function MissionBay() {
     {
       id: 2,
       title: "Suite 1C",
-      sqft: "1,200",
+      sqft: "3,339",
       price: "Price Available Upon Request",
       images: [
         "/images/mission-bay/suite1CDE/PageOneSuite1CDE.jpg",
@@ -131,10 +131,11 @@ export default function MissionBay() {
       type: "Office Space",
       location: "Mission Bay",
       features: [
-        { name: "AC/Heating", status: "Included" },
-        { name: "Bathroom", status: "Included" },
-        { name: "Large Windows", status: "Yes" },
-        { name: "Upgrades", status: "Allowed" },
+        { name: "Private Exam Rooms", status: "Included" },
+        { name: "Waiting Area", status: "Included" },
+        { name: "Staff Area", status: "Included" },
+        { name: "Bathrooms", status: "Included" },
+        { name: "Break room", status: "Included" },
       ],
     },
   ];
