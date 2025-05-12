@@ -3,8 +3,54 @@
 import NavBar from "@/app/components/ui/navigation/NavBar";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const form = useRef<HTMLFormElement>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [formStatus, setFormStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    setFormStatus("sending");
+
+    // Use environment variables
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    emailjs
+      .sendForm(serviceId!, templateId!, form.current, publicKey!)
+      .then(() => {
+        setFormStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        setFormStatus("error");
+      });
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <NavBar />
@@ -51,12 +97,16 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
               <h2 className="text-2xl font-bold mb-4">Send us a message</h2>
-              <form className="space-y-4">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Name</label>
                   <input
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-transparent"
+                    required
                   />
                 </div>
                 <div>
@@ -65,7 +115,11 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-transparent"
+                    required
                   />
                 </div>
                 <div>
@@ -74,10 +128,33 @@ export default function Contact() {
                   </label>
                   <textarea
                     rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-transparent"
+                    required
                   ></textarea>
                 </div>
-                <Button className="w-full ">Send Message</Button>
+                <Button
+                  type="submit"
+                  className="w-full"
+                  disabled={formStatus === "sending"}
+                >
+                  {formStatus === "sending" ? "Sending..." : "Send Message"}
+                </Button>
+
+                {formStatus === "success" && (
+                  <p className="text-green-500 mt-2">
+                    Message sent successfully! We will get back to you soon.
+                  </p>
+                )}
+
+                {formStatus === "error" && (
+                  <p className="text-red-500 mt-2">
+                    There was an error sending your message. Please try again or
+                    contact us directly.
+                  </p>
+                )}
               </form>
             </div>
 
