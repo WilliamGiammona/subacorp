@@ -145,7 +145,7 @@ export default function Contact() {
 
                 {formStatus === "success" && (
                   <p className="text-green-500 mt-2">
-                    Message sent successfully! We will get back to you soon.
+                    Message sent successfully! We&apos;ll get back to you soon.
                   </p>
                 )}
 
