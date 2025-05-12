@@ -229,7 +229,7 @@ export default function FeaturedProperties() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
-            Available Listings
+            Sample Of Available Listings
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
             Discover our selection of premium commercial properties in prime
