@@ -91,7 +91,7 @@ export default function MissionBay() {
   const listings = [
     {
       id: 1,
-      title: "Suite 1C",
+      title: "Suite 1C-E",
       sqft: "3,339",
       price: "Price Available Upon Request",
       images: [
