@@ -297,7 +297,7 @@ export default function SolanaBeach() {
             <br />
             - easy acess to Interstate 5 Freeway.
             <br />
-            The property is home to:
+            The property is has:
             <br />
             - Award winning Bangkok Bay Thai restaurant
             <br />
