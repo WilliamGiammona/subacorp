@@ -95,11 +95,11 @@ export default function MissionBay() {
       sqft: "3,339",
       price: "Price Available Upon Request",
       images: [
-        "/images/mission-bay/suite1CDE/PageOneSuite1CDE.jpg",
+        "/images/mission-bay/suite1CDE/PageFiveSuite1CDE.jpg",
         "/images/mission-bay/suite1CDE/PageTwoSuite1CDE.jpg",
         "/images/mission-bay/suite1CDE/PageThreeSuite1CDE.jpg",
         "/images/mission-bay/suite1CDE/PageFourSuite1CDE.jpg",
-        "/images/mission-bay/suite1CDE/PageFiveSuite1CDE.jpg",
+        "/images/mission-bay/suite1CDE/PageOneSuite1CDE.jpg",
         "/images/mission-bay/suite1CDE/PageSixSuite1CDE.jpg",
         "/images/mission-bay/suite1CDE/PageSixSuite1CDE.jpg",
         "/images/mission-bay/suite1CDE/PageSevenSuite1CDE.jpg",
@@ -109,7 +109,7 @@ export default function MissionBay() {
         "/images/mission-bay/suite1CDE/PageElevenSuite1CDE.jpg",
         "/images/mission-bay/suite1CDE/PageTwelveSuite1CDE.jpg",
       ],
-      imageUrl: "/images/mission-bay/suite1CDE/PageOneSuite1CDE.jpg",
+      imageUrl: "/images/mission-bay/suite1CDE/PageFiveSuite1CDE.jpg",
       type: "Office Space",
       location: "Mission Bay",
       features: [
