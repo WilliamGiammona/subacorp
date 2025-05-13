@@ -291,11 +291,13 @@ export default function SolanaBeach() {
             Solana Beach, near the edge of Del Mar, giving it a very prestigious
             location between two very desirable and affluent cities.
             <br />
+            <br />
             This commercial center is located on:
             <br />
             - US Highway 101
             <br />
             - easy acess to Interstate 5 Freeway.
+            <br />
             <br />
             The property has:
             <br />
@@ -305,11 +307,13 @@ export default function SolanaBeach() {
             <br />
             - Ample free parking on site and on adjacent streets
             <br />
+            <br />
             The median household income is:
             <br />
             - Solana Beach: $150,820
             <br />
             - Del Mar: $192,845
+            <br />
             <br />
             The population for:
             <br />
@@ -317,7 +321,9 @@ export default function SolanaBeach() {
             <br />
             - Del Mar: 3,921
             <br />
-            The property is located near: <br />
+            <br />
+            The property is located near:
+            <br />
             - Del Mar Racetrack and Fairgrounds
             <br />
             - World class beaches
