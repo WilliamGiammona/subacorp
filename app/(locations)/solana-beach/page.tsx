@@ -291,8 +291,11 @@ export default function SolanaBeach() {
             Solana Beach, near the edge of Del Mar, giving it a very prestigious
             location between two very desirable and affluent cities.
             <br />
-            This commercial center is located on Highway 101 and has easy access
-            to Interstate 5 Freeway.
+            This commercial center is located on:
+            <br />
+            - Highway 101
+            <br />
+            - easy acess to Interstate 5 Freeway.
             <br />
             The property is home to:
             <br />
