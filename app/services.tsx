@@ -12,7 +12,7 @@ export default function Services() {
     {
       title: "Property Management",
       description:
-        "Comprehensive property maintenance and operations management",
+        "Comprehensive property maintenance and operations management for our properties",
       icon: Building2,
       // highlights: [
       //   "Preventive Maintenance",
