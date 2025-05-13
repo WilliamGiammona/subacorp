@@ -257,7 +257,7 @@ export default function MissionBay() {
             <br />
             The median income is approximately $71,000 with the average home
             price being $982,000. <br /> The surrounding population is 48,000
-            with a den sity of 6,250 people per square mile.
+            with a density of 6,250 people per square mile.
             <br />
           </p>
         </div>
