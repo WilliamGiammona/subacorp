@@ -78,7 +78,7 @@ export default function About() {
               <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
                 <h3 className="font-bold mb-2">Tenant Support</h3>
                 <p className="text-sm text-muted-foreground">
-                  Dedicated support for business success
+                  Dedicated support ensuring tenant satisfaction and retention
                 </p>
               </div>
               <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
