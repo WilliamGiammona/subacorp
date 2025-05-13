@@ -77,7 +77,7 @@ export default function SolanaBeach() {
       ],
       imageUrl: "/images/mission-bay/suite1L/Exterior1L.jpg",
       type: "Office Space",
-      location: "Mission Bay",
+      location: "Solana Beach",
       features: [
         { name: "Spacious Offices", status: "Included" },
         { name: "Waiting Area", status: "Included" },
