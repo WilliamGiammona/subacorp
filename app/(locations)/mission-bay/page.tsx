@@ -235,16 +235,16 @@ export default function MissionBay() {
             high-traffic (approximately 31,360 ADT), high visibility area in the
             Pacific Beach area of San Diego.
             <br />
-            The building has
+            The building has:
             <br />
-            - easy access to Highways 5 and 52
+            - Easy access to Highways 5 and 52
             <br />
-            - parking for customers
+            - Ample parking for customers
             <br />
-            - award winning restaurants, a convenience store, and many medical
+            - Award winning restaurants, a convenience store, and many medical
             and professional tenants.
             <br />
-            It is near
+            It is near:
             <br />
             - Mission Bay Golf Course
             <br />
