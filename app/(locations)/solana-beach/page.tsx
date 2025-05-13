@@ -293,7 +293,7 @@ export default function SolanaBeach() {
             <br />
             This commercial center is located on:
             <br />
-            - Highway 101
+            - US Highway 101
             <br />
             - easy acess to Interstate 5 Freeway.
             <br />
