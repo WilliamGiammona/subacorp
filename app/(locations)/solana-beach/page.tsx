@@ -289,21 +289,35 @@ export default function SolanaBeach() {
           <p className="mt-8  text-gray-600 dark:text-gray-300 text-sm md:text-base">
             Mercado Del Sol is conveniently located in the coastal community of
             Solana Beach, near the edge of Del Mar, giving it a very prestigious
-            location between two very desirable and affluent cities. This
-            commercial center is located on Highway 101 and has easy access to
-            Interstate 5 Freeway. The property is home to Bangkok Bay Thai
-            restaurant, a continuous winner of the best restaurant year after
-            year in the North County area of San Diego County. There are also
-            several retail shops and professional offices in the center. The
-            population in Solana Beach is approximately 12,675 and Del Mar has a
-            population of approximately 3,921. The median household income for
-            Solana Beach is $150,820.00 and Del Mar is $192,845.00. The center
-            has sufficient free parking and there is also plenty of street
-            parking on adjacent streets. Besides the fantastic tenants and their
-            offerings and services, it is located near other restaurants,
-            shopping, world class beaches, The Del Mar Racetrack, The
-            Coaster/Amtrak station and many other great services. We have
-            several new spaces coming up for lease over the next few months.
+            location between two very desirable and affluent cities.
+            <br />
+            This commercial center is located on Highway 101 and has easy access
+            to Interstate 5 Freeway.
+            <br />
+            The property is home to:
+            <br />
+            - Award winning Bangkok Bay Thai restaurant
+            <br />
+            - Other retail and professional offices
+            <br />
+            - Ample free parking on site and on adjacent streets
+            <br />
+            The median household income is:
+            <br />
+            - Solana Beach: $150,820
+            <br />
+            - Del Mar: $192,845
+            <br />
+            The population for: - Solana Beach: 12,675 - Del Mar: 3,921
+            <br />
+            The property is located near: <br />
+            - Del Mar Racetrack and Fairgrounds
+            <br />
+            - World class beaches
+            <br />
+            - The Coaster/Amtrak station
+            <br />
+            - Shopping and other restaurants
             <br />
           </p>
         </div>
