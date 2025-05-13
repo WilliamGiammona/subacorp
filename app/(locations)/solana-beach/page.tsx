@@ -63,6 +63,31 @@ export default function SolanaBeach() {
         { name: "Upgrades", status: "Allowed" },
       ],
     },
+    {
+      id: 2,
+      title: "Suite 1P",
+      sqft: "1,350",
+      price: "Price Available Upon Request",
+      images: [
+        "/images/mission-bay/suite1P/Suite1Ppage1.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage2.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage3.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage4.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage5.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage6.jpg",
+        "/images/mission-bay/suite1P/FloorPlan1P.jpg",
+        "/images/mission-bay/suite1P/Exterior1P.jpg",
+      ],
+      imageUrl: "/images/mission-bay/suite1P/Suite1Ppage1.jpg",
+      type: "Office/Retail Space",
+      location: "Mission Bay",
+      features: [
+        { name: "AC/Heating", status: "Included" },
+        { name: "Bathroom", status: "Included" },
+        { name: "Corner Location", status: "Yes" },
+        { name: "Upgrades", status: "Allowed" },
+      ],
+    },
   ];
 
   const featuredTenants = [
