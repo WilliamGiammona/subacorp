@@ -71,8 +71,8 @@ export default function About() {
               <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
                 <h3 className="font-bold mb-2">Property Management</h3>
                 <p className="text-sm text-muted-foreground">
-                  Professional management and maintenance services for our
-                  properties
+                  Comprehensive property maintenance and operations management
+                  for our properties
                 </p>
               </div>
               <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
