@@ -34,8 +34,7 @@ export default function Services() {
 
     {
       title: "Tenant Relations",
-      description:
-        "Dedicated support ensuring tenant satisfaction and retention",
+      description: "Dedicated support for tenants",
       icon: Users2,
       // highlights: ["Tenant Support", "Lease Administration", "Communication"],
     },
