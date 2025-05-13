@@ -235,6 +235,7 @@ export default function MissionBay() {
             high-traffic (approximately 31,360 ADT), high visibility area in the
             Pacific Beach area of San Diego.
             <br />
+            <br />
             The building has:
             <br />
             - Easy access to Highways 5 and 52
@@ -244,6 +245,7 @@ export default function MissionBay() {
             - Award winning restaurants, a convenience store, and many medical
             and professional tenants.
             <br />
+            <br />
             It is near:
             <br />
             - Mission Bay Golf Course
@@ -251,6 +253,7 @@ export default function MissionBay() {
             - The beach
             <br />
             - Hotels, restaurans, other retail stores
+            <br />
             <br />
             The median income is approximately $71,000 with the average home
             price being $982,000. <br /> The surrounding population is 48,000
