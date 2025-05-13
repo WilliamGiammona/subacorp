@@ -89,16 +89,16 @@ export default function SolanaBeach() {
       sqft: "1,350",
       price: "Price Available Upon Request",
       images: [
-        "/images/mission-bay/suite1P/Suite1Ppage1.jpg",
         "/images/mission-bay/suite1P/Suite1Ppage2.jpg",
         "/images/mission-bay/suite1P/Suite1Ppage3.jpg",
         "/images/mission-bay/suite1P/Suite1Ppage4.jpg",
+        "/images/mission-bay/suite1P/Suite1Ppage1.jpg",
         "/images/mission-bay/suite1P/Suite1Ppage5.jpg",
         "/images/mission-bay/suite1P/Suite1Ppage6.jpg",
         "/images/mission-bay/suite1P/FloorPlan1P.jpg",
         "/images/mission-bay/suite1P/Exterior1P.jpg",
       ],
-      imageUrl: "/images/mission-bay/suite1P/Suite1Ppage1.jpg",
+      imageUrl: "/images/mission-bay/suite1P/Suite1Ppage3.jpg",
       type: "Office/Retail Space",
       location: "Solana Beach",
       features: [
