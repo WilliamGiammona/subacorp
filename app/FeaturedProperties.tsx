@@ -64,7 +64,7 @@ const featuredListings = [
     ],
     imageUrl: "/images/mission-bay/suite1P/Suite1Ppage1.jpg",
     type: "Office/Retail Space",
-    location: "Mission Bay",
+    location: "Solana Beach",
     features: [
       { name: "AC/Heating", status: "Included" },
       { name: "Bathroom", status: "Included" },
