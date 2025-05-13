@@ -311,7 +311,11 @@ export default function SolanaBeach() {
             <br />
             - Del Mar: $192,845
             <br />
-            The population for: - Solana Beach: 12,675 - Del Mar: 3,921
+            The population for:
+            <br />
+            - Solana Beach: 12,675
+            <br />
+            - Del Mar: 3,921
             <br />
             The property is located near: <br />
             - Del Mar Racetrack and Fairgrounds
