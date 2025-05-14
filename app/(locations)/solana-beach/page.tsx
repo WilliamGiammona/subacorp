@@ -290,33 +290,35 @@ export default function SolanaBeach() {
             Mercado Del Sol is conveniently located in the coastal community of
             Solana Beach, near the edge of Del Mar, giving it a very prestigious
             location between two very desirable and affluent cities.
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               This commercial center is located on:
             </p>
-            <ul className="list-disc pl-6 mb-4 text-gray-600">
+            <ul className="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>Highway 101</li>
               <li>Easy acess to Interstate 5 Freeway.</li>
             </ul>
-            <p className="mt-4 text-gray-600">The property has:</p>
-            <ul className="list-disc pl-6 mb-4 text-gray-600">
+            <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
+              The property has:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>Award winning Bangkok Bay Thai restaurant</li>
               <li>Other retail and professional offices</li>
               <li>Ample free parking on site and on adjacent streets</li>
             </ul>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               The median household income is:
             </p>
-            <ul className="list-disc pl-6 mb-4 text-gray-600">
+            <ul className="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>Solana Beach: $150,820</li>
               <li>Del Mar: $192,845</li>
             </ul>
             <p className="mt-4 text-gray-600">The population for:</p>
-            <ul className="list-disc pl-6 mb-4 text-gray-600">
+            <ul className="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>Solana Beach: 12,675</li>
               <li>Del Mar: 3,921</li>
             </ul>
             <p className="mt-4 text-gray-600">The property is located near:</p>
-            <ul className="list-disc pl-6 mb-4 text-gray-600">
+            <ul className="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>Del Mar Racetrack and Fairgrounds</li>
               <li>World class beaches</li>
               <li>The Coaster/Amtrak station</li>
