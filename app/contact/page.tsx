@@ -42,7 +42,6 @@ export default function Contact() {
 
     if (!form.current) return;
 
-    // Get environment variables
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
