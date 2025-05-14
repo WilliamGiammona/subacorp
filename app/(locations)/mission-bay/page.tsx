@@ -234,30 +234,27 @@ export default function MissionBay() {
             Mission Bay Professional Center is conveniently located in a
             high-traffic (approximately 31,360 ADT), high visibility area in the
             Pacific Beach area of San Diego.
-            <br />
-            <br />
-            The building has:
-            <br />
-            - Easy access to Highways 5 and 52
-            <br />
-            - Ample parking for customers
-            <br />
-            - Award winning restaurants, a convenience store, and many medical
-            and professional tenants.
-            <br />
-            <br />
-            It is near:
-            <br />
-            - Mission Bay Golf Course
-            <br />
-            - The beach
-            <br />
-            - Hotels, restaurans, other retail stores
-            <br />
-            <br />
-            The median income is approximately $71,000 with the average home
-            price being $982,000. <br /> The surrounding population is 48,000
-            with a density of 6,250 people per square mile.
+            <p className="mt-4 text-gray-600">The building has:</p>
+            <ul className="list-disc pl-6 mb-4 text-gray-600">
+              <li>Easy access to Highways 5 and 52</li>
+              <li>Ample parking for customers</li>
+              <li>
+                Award winning restaurants, a convenience store, and many medical
+                and professional tenants
+              </li>
+            </ul>
+            <p className="mt-4 text-gray-600">It is near:</p>
+            <ul className="list-disc pl-6 mb-4 text-gray-600">
+              <li>Mission Bay Golf Course</li>
+              <li>The beach</li>
+              <li>Hotels, restaurans, other retail stores</li>
+            </ul>
+            <p className="mt-4 text-gray-600">
+              {" "}
+              The median income is approximately $71,000 with the average home
+              price being $982,000. <br /> The surrounding population is 48,000
+              with a density of 6,250 people per square mile.
+            </p>
             <br />
           </p>
         </div>
