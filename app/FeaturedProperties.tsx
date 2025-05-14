@@ -50,7 +50,7 @@ const featuredListings = [
   {
     id: 2,
     title: "Suite 1P",
-    sqft: "1,350",
+    sqft: "1,050",
     price: "Price Available Upon Request",
     images: [
       "/images/mission-bay/suite1P/Suite1Ppage3.jpg",
@@ -65,12 +65,7 @@ const featuredListings = [
     imageUrl: "/images/mission-bay/suite1P/Suite1Ppage3.jpg",
     type: "Office/Retail Space",
     location: "Solana Beach",
-    features: [
-      { name: "AC/Heating", status: "Included" },
-      { name: "Bathroom", status: "Included" },
-      { name: "Corner Location", status: "Yes" },
-      { name: "Upgrades", status: "Allowed" },
-    ],
+    features: [{ name: "Corner Location", status: "Yes" }],
   },
   {
     id: 3,
