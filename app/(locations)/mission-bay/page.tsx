@@ -234,8 +234,10 @@ export default function MissionBay() {
             Mission Bay Professional Center is conveniently located in a
             high-traffic (approximately 31,360 ADT), high visibility area in the
             Pacific Beach area of San Diego.
-            <p className="mt-4 text-gray-600">The building has:</p>
-            <ul className="list-disc pl-6 mb-4 text-gray-600">
+            <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
+              The building has:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>Easy access to Highways 5 and 52</li>
               <li>Ample parking for customers</li>
               <li>
@@ -243,13 +245,15 @@ export default function MissionBay() {
                 and professional tenants
               </li>
             </ul>
-            <p className="mt-4 text-gray-600">It is near:</p>
-            <ul className="list-disc pl-6 mb-4 text-gray-600">
+            <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
+              It is near:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>Mission Bay Golf Course</li>
               <li>The beach</li>
               <li>Hotels, restaurans, other retail stores</li>
             </ul>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               {" "}
               The median income is approximately $71,000 with the average home
               price being $982,000. <br /> The surrounding population is 48,000
