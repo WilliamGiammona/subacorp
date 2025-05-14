@@ -101,12 +101,7 @@ export default function SolanaBeach() {
       imageUrl: "/images/mission-bay/suite1P/Suite1Ppage3.jpg",
       type: "Office/Retail Space",
       location: "Solana Beach",
-      features: [
-        { name: "AC/Heating", status: "Included" },
-        { name: "Bathroom", status: "Included" },
-        { name: "Corner Location", status: "Yes" },
-        { name: "Upgrades", status: "Allowed" },
-      ],
+      features: [{ name: "Corner Location", status: "Yes" }],
     },
   ];
 
