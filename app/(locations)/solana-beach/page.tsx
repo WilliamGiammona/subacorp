@@ -86,7 +86,7 @@ export default function SolanaBeach() {
     {
       id: 3,
       title: "Suite 1P",
-      sqft: "1,350",
+      sqft: "1,050",
       price: "Price Available Upon Request",
       images: [
         "/images/mission-bay/suite1P/Suite1Ppage3.jpg",
