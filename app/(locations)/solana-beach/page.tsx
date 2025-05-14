@@ -290,7 +290,7 @@ export default function SolanaBeach() {
             </p>
             <ul className="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>Highway 101</li>
-              <li>Easy acess to Interstate 5 Freeway.</li>
+              <li>Easy access to Interstate 5 Freeway.</li>
             </ul>
             <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               The property has:
