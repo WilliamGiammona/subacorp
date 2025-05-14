@@ -60,12 +60,13 @@ export default function Contact() {
 
     emailjs
       .sendForm(serviceId, templateId, form.current, publicKey)
-      .then(() => {
+      .then((result) => {
+        console.log("SUCCESS!", result.text, result.status);
         setFormStatus("success");
         setFormData({ name: "", email: "", message: "" });
       })
       .catch((error) => {
-        console.error("Error sending email:", error);
+        console.error("FAILED...", error.text, error);
         setFormStatus("error");
       });
   };
