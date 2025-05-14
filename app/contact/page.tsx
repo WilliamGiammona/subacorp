@@ -42,6 +42,7 @@ export default function Contact() {
 
     if (!form.current) return;
 
+    // Ensure these environment variables are set in your .env.local file
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
