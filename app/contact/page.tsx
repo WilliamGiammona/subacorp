@@ -173,7 +173,7 @@ export default function Contact() {
                 {formStatus === "error" && (
                   <p className="text-red-500 mt-2">
                     There was an error sending your message. Please try again or
-                    contact us directly.
+                    contact us directly at contact@subacorp.com
                   </p>
                 )}
               </form>
