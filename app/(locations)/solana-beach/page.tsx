@@ -286,51 +286,42 @@ export default function SolanaBeach() {
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-300">
             731 Hwy 101, Solana Beach, CA 92075
           </p>
-          <p className="mt-8  text-gray-600 dark:text-gray-300 text-sm md:text-base">
+          <p className="mt-8 text-gray-600 dark:text-gray-300 text-sm md:text-base">
             Mercado Del Sol is conveniently located in the coastal community of
             Solana Beach, near the edge of Del Mar, giving it a very prestigious
             location between two very desirable and affluent cities.
-            <br />
-            <br />
-            This commercial center is located on:
-            <br />
-            - Highway 101
-            <br />
-            - easy acess to Interstate 5 Freeway.
-            <br />
-            <br />
-            The property has:
-            <br />
-            - Award winning Bangkok Bay Thai restaurant
-            <br />
-            - Other retail and professional offices
-            <br />
-            - Ample free parking on site and on adjacent streets
-            <br />
-            <br />
-            The median household income is:
-            <br />
-            - Solana Beach: $150,820
-            <br />
-            - Del Mar: $192,845
-            <br />
-            <br />
-            The population for:
-            <br />
-            - Solana Beach: 12,675
-            <br />
-            - Del Mar: 3,921
-            <br />
-            <br />
-            The property is located near:
-            <br />
-            - Del Mar Racetrack and Fairgrounds
-            <br />
-            - World class beaches
-            <br />
-            - The Coaster/Amtrak station
-            <br />
-            - Shopping and other restaurants
+            <p className="mt-4 text-gray-600">
+              This commercial center is located on:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-600">
+              <li>Highway 101</li>
+              <li>Easy acess to Interstate 5 Freeway.</li>
+            </ul>
+            <p className="mt-4 text-gray-600">The property has:</p>
+            <ul className="list-disc pl-6 mb-4 text-gray-600">
+              <li>Award winning Bangkok Bay Thai restaurant</li>
+              <li>Other retail and professional offices</li>
+              <li>Ample free parking on site and on adjacent streets</li>
+            </ul>
+            <p className="mt-4 text-gray-600">
+              The median household income is:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-600">
+              <li>Solana Beach: $150,820</li>
+              <li>Del Mar: $192,845</li>
+            </ul>
+            <p className="mt-4 text-gray-600">The population for:</p>
+            <ul className="list-disc pl-6 mb-4 text-gray-600">
+              <li>Solana Beach: 12,675</li>
+              <li>Del Mar: 3,921</li>
+            </ul>
+            <p className="mt-4 text-gray-600">The property is located near:</p>
+            <ul className="list-disc pl-6 mb-4 text-gray-600">
+              <li>Del Mar Racetrack and Fairgrounds</li>
+              <li>World class beaches</li>
+              <li>The Coaster/Amtrak station</li>
+              <li>Shopping and other restaurants</li>
+            </ul>
             <br />
           </p>
         </div>
