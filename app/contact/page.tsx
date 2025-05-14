@@ -3,7 +3,7 @@
 import NavBar from "@/app/components/ui/navigation/NavBar";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
@@ -16,6 +16,16 @@ export default function Contact() {
   const [formStatus, setFormStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
+
+  // Initialize EmailJS when the component mounts
+  useEffect(() => {
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+
+    emailjs.init(publicKey);
+
+    // Optional: Log for debugging (remove in production)
+    console.log("EmailJS initialized");
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -32,14 +42,25 @@ export default function Contact() {
 
     if (!form.current) return;
 
+    // Get environment variables
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+
+    // Check if all required values are present
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("Missing required EmailJS configuration");
+      setFormStatus("error");
+      return;
+    }
+
     setFormStatus("sending");
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    // Log the values for debugging (remove in production)
+    console.log("Sending email with:", { serviceId, templateId });
 
     emailjs
-      .sendForm(serviceId!, templateId!, form.current, publicKey!)
+      .sendForm(serviceId, templateId, form.current, publicKey)
       .then(() => {
         setFormStatus("success");
         setFormData({ name: "", email: "", message: "" });
@@ -171,7 +192,7 @@ export default function Contact() {
                   </p>
                 </div>
               </div>
-              <div className="aspect-video w-full rounded-lg ">
+              <div className="aspect-video w-full rounded-lg">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.5713008346766!2d-117.27257572334168!3d32.98219266420057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0ed576cac1cf%3A0xca1ed89e0b48ccc0!2sMercado%20del%20Sol%20Shopping%20Center!5e0!3m2!1sen!2sus!4v1705997144599!5m2!1sen!2sus"
                   className="w-full h-full rounded-lg"
