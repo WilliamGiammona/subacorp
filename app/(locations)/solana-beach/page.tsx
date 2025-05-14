@@ -312,12 +312,16 @@ export default function SolanaBeach() {
               <li>Solana Beach: $150,820</li>
               <li>Del Mar: $192,845</li>
             </ul>
-            <p className="mt-4 text-gray-600">The population for:</p>
+            <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
+              The population for:
+            </p>
             <ul className="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>Solana Beach: 12,675</li>
               <li>Del Mar: 3,921</li>
             </ul>
-            <p className="mt-4 text-gray-600">The property is located near:</p>
+            <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
+              The property is located near:
+            </p>
             <ul className="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>Del Mar Racetrack and Fairgrounds</li>
               <li>World class beaches</li>
